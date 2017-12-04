@@ -1,3 +1,9 @@
+# User Settings
+wotlkdoc_venv/
+wotlkdoc.egg-info/
+wotlkdoc-*/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
