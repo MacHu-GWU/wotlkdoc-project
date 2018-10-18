@@ -3,7 +3,8 @@
 [run]
 omit =
     wotlkdoc/pkg/*
-    wotlkdoc/zzz_ezinstall.py
+    wotlkdoc/docs/*
+    wotlkdoc/tests/*
 
 [report]
 # Regexes for lines to exclude from consideration
