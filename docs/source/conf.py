@@ -99,7 +99,6 @@ todo_include_todos = True
 html_theme = 'classic'
 html_theme_options = {
     "stickysidebar": True,
-    "collapsiblesidebar": True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
