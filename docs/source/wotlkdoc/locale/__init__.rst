@@ -1,7 +1,7 @@
-wotlkdoc
-========
+locale
+======
 
-.. automodule:: wotlkdoc
+.. automodule:: wotlkdoc.locale
     :members:
 
 sub packages and modules
@@ -10,5 +10,4 @@ sub packages and modules
 .. toctree::
     :maxdepth: 1
 
-    locale <locale/__init__>
     

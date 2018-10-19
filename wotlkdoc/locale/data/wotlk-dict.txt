@@ -1,0 +1,47 @@
+zh-CN	en-US
+经典旧世	Vanilla
+燃烧的远征	TBC
+巫妖王之怒	WLK
+战士	Warrior
+圣骑士	Paladin
+死亡骑士	Death Knight
+猎人	Hunter
+萨满	Shaman
+盗贼	Rogue
+德鲁伊	Druid
+法师	Mage
+术士	Warlock
+牧师	Presis
+锻造	Blacksmithing
+制皮	Leatherworking
+裁缝	Tailoring
+采药	Herbalsim
+炼金	Alchemy
+采矿	Mining
+剥皮	Skinning
+附魔	Enchanting
+工程学	Engineering
+珠宝加工	Jewelcrafting
+铭文	Inscription
+火焰	Fire
+冰霜	Frost
+奥术	Arcane
+自然	Nature
+暗影	Shadow
+神圣	Holy
+联盟	Alliance
+部落	Horde
+小队副本	Dungeon
+团队副本	Raid
+职业	Class
+职业技能	Class Skill
+职业技能训练师	Class Skill Trainer
+商业技能	Trade Skill
+商业技能训练师	Trade Skill Trainer
+任务	Quest
+职业任务	Class Quest
+普通	Common
+优秀	Uncommon
+精良	Rare
+史诗	Epic
+传奇	Legendary
