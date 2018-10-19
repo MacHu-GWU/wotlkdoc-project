@@ -22,6 +22,7 @@
 
 from __future__ import unicode_literals
 from datetime import datetime
+import os
 import wotlkdoc
 
 # -- General configuration ------------------------------------------------
@@ -96,12 +97,10 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 html_theme = 'classic'
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
-# html_theme_options = {}
+html_theme_options = {
+    "stickysidebar": True,
+    "collapsiblesidebar": True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -113,17 +112,17 @@ html_favicon = "./_static/wotlkdoc-favicon.ico"
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
-# This is required for the alabaster theme
+# This is required for the alabaster theme, comment it out if use other theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'about.html',
-        'navigation.html',
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-        'donate.html',
-    ]
-}
+# html_sidebars = {
+#     '**': [
+#         'about.html',
+#         'navigation.html',
+#         'relations.html',  # needs 'show_related': True theme option to display
+#         'searchbox.html',
+#         'donate.html',
+#     ]
+# }
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -184,7 +183,14 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 autodoc_member_order = 'bysource'
 
 # Enable custom css
-rst_prolog = '\n.. include:: .custom-style.rst\n'
+try:
+    custom_style_file_path = os.path.join(os.path.dirname(__file__), "_static", ".custom-style.rst")
+    with open(custom_style_file_path, "rb") as f:
+        custom_style_file_content = f.read().decode("utf-8")
+    rst_prolog = "\n" + custom_style_file_content + "\n"
+except:
+    pass
+
 
 # Add data for Jinja2
 try:
@@ -201,16 +207,17 @@ jinja_contexts = {
 # Api Reference Doc
 import docfly
 
-package_name = wotlkdoc.__name__
-docfly.ApiReferenceDoc(
-    conf_file=__file__,
-    package_name=package_name,
-    ignored_package=[
-        "%s.pkg" % package_name,
-        "%s.docs" % package_name,
-        "%s.tests" % package_name,
-    ]
-).fly()
+# We DO NOT need API Reference in this project
+# package_name = wotlkdoc.__name__
+# docfly.ApiReferenceDoc(
+#     conf_file=__file__,
+#     package_name=package_name,
+#     ignored_package=[
+#         "%s.pkg" % package_name,
+#         "%s.docs" % package_name,
+#         "%s.tests" % package_name,
+#     ]
+# ).fly()
 
 
 def source_read_callback(app, docname, source):

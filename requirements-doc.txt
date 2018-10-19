@@ -2,8 +2,6 @@ sphinx==1.8.1
 
 # Theme
 
-sphinx_rtd_theme
-
 # Extensions
 
 sphinx-jinja        # allow jinja2 template
