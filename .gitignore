@@ -2,6 +2,8 @@
 wotlkdoc_venv/
 wotlkdoc.egg-info/
 wotlkdoc-*/
+wotlkdoc/*.txt
+wotlkdoc/*.json
 
 
 # Byte-compiled / optimized / DLL files
