@@ -1,3 +1,4 @@
 gspread-pandas
 loc
 pandas_mate
+pypinyin

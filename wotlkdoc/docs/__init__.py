@@ -1,3 +1,10 @@
 # -*- coding: utf-8 -*-
 
-doc_data = dict()
+
+from .gps import
+
+doc_data = dict(
+    gps=dict(
+        city=
+    )
+)
