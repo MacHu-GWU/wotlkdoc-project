@@ -7,7 +7,7 @@ sphinx==1.8.1
 sphinx-jinja        # allow jinja2 template
 sphinx-copybutton   # add copy to clipboard button for code block
 docfly>=0.0.16      # auto API manual, auto Table of Content
-rstobj              # generate list table from data
+rstobj==0.0.5       # generate list table from data
 
 # Other
 

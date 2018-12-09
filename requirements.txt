@@ -1,3 +1,6 @@
 gspread-pandas
 loc
 pandas_mate
+pypinyin
+sfm==0.0.16
+rstobj==0.0.5

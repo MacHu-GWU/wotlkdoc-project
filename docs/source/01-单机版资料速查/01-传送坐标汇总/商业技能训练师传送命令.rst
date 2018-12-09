@@ -1,0 +1,18 @@
+.. _商业技能训练师传送GM命令:
+
+商业技能训练师 传送GM命令
+------------------------------------------------------------------------------
+
+.. contents:: 目录
+    :local:
+
+.. jinja:: doc_data
+
+    {% for tradeskill, lt in doc_data.lt_list_trade_skill_trainer_gsp %}
+    .. _{{ tradeskill }}训练师传送GM命令:
+
+    {{ tradeskill }} 训练师传送GM命令
+    ~~~~~~~~~~~~~~~~~~~~
+
+    {{ lt.render() }}
+    {% endfor %}

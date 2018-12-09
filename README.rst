@@ -51,23 +51,3 @@
 
 Welcome to ``wotlkdoc`` Documentation
 ==============================================================================
-
-Documentation for ``wotlkdoc``.
-
-
-.. _install:
-
-Install
-------------------------------------------------------------------------------
-
-``wotlkdoc`` is released on PyPI, so all you need is:
-
-.. code-block:: console
-
-    $ pip install wotlkdoc
-
-To upgrade to latest version:
-
-.. code-block:: console
-
-    $ pip install --upgrade wotlkdoc
