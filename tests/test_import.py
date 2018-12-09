@@ -7,7 +7,7 @@ from pytest import raises, approx
 
 def test():
     import wotlkdoc
-    pass
+    from wotlkdoc.docs import doc_data
 
 
 if __name__ == "__main__":

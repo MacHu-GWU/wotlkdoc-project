@@ -1,0 +1,18 @@
+.. _职业技能训练师传送GM命令:
+
+职业技能训练师 传送GM命令
+------------------------------------------------------------------------------
+
+.. contents:: 目录
+    :local:
+
+.. jinja:: doc_data
+
+    {% for faction, lt in doc_data.lt_list_class_trainer_gsp %}
+    .. _{{ faction }}传送GM命令:
+
+    {{ faction }}
+    ~~~~~~~~~~~~~~~~~~~~
+
+    {{ lt.render() }}
+    {% endfor %}
