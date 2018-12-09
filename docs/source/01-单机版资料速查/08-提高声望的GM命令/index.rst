@@ -11,15 +11,15 @@
 
 ------
 
-.. image:: /_static/images/expansion-logo/WoW01-Vanilla-Logo.png
+.. image:: /_static/image/expansion-logo/WoW01-Vanilla-Logo.png
     :target: 经典旧世声望GM命令_
     :height: 64 px
 
-.. image:: /_static/images/expansion-logo/WoW02-The-Burning-Crusade-Logo.png
+.. image:: /_static/image/expansion-logo/WoW02-The-Burning-Crusade-Logo.png
     :target: 燃烧的远征声望GM命令_
     :height: 64 px
 
-.. image:: /_static/images/expansion-logo/WoW03-Wrath-of-the-Lich-King-Logo.png
+.. image:: /_static/image/expansion-logo/WoW03-Wrath-of-the-Lich-King-Logo.png
     :target: 巫妖王之怒声望GM命令_
     :height: 64 px
 
