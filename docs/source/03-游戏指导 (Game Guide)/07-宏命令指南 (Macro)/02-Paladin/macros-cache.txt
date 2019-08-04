@@ -1,0 +1,51 @@
+MACRO 16777222 "十字军打击" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 正义盾击; 十字军打击
+END
+MACRO 16777225 "圣光闪" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 圣光术; 圣光闪现
+END
+MACRO 16777218 "奉献" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 神圣愤怒; 奉献
+END
+MACRO 16777220 "审判" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 清算之手; 圣光审判
+END
+MACRO 16777221 "审判" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 清算之手; 公正审判
+END
+MACRO 16777219 "审判" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 清算之手; 智慧审判
+END
+MACRO 16777226 "智能圣闪" INV_Misc_QuestionMark
+#showtooltips
+/cast [modifier:alt,target=player][target=mouseover,help][help][target=targettarget,help][] 圣光闪现
+END
+MACRO 16777224 "清洁" INV_Misc_QuestionMark
+#showtooltips
+/stopcasting
+/cast [help][target=targettarget, help][] 清洁术
+END
+MACRO 16777223 "神圣风暴" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 十字军打击; 神圣风暴
+END
+MACRO 16777228 "神盾" INV_Misc_QuestionMark
+#showtooltip
+/cast [mod:alt] 复仇者之盾; 神圣之盾
+END
+MACRO 16777227 "锤击" INV_Misc_QuestionMark
+#showtooltips
+/startattack
+/cast [mod:alt] 正义盾击; 正义之锤
+END

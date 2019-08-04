@@ -1,0 +1,27 @@
+中文名	英文名	中文缩写	英文缩写
+力量	Strength	力	Str
+敏捷	Agility	敏	Agi
+耐力	Stamina	耐	Sta
+智力	Intellegence	智	Int
+精神	Spirit	精	Spi
+法术强度	Spell Power	法强	SP
+攻击强度	Attack Power	攻强	AP
+致命	Critical Strike Rating	致命	Crt
+急速	Haste Rating	急速	Hst
+命中	Hit Rating	命中	Hit
+熟练	Expertise Rating	熟练	Exp
+破甲	Armor Penetration Rating	破甲	Apen
+护甲	Armor	护甲	Armor
+每5秒回复法力	Restore Mana Per 5 Second	回5	Mp5
+防御等级	Defence Rating	防御	Def
+躲闪等级	Dodge Rating	躲闪	Dodge
+招架等级	Parry Rating	招架	Parry
+格挡等级	Block Rating	格挡	Block
+格挡值	Block Value	格挡值	BV
+韧性	Resilience Rating	韧性	res
+法术穿透	Spell Penetration	减抗	Spen
+火焰抗性	Fire Resistance	火抗	FRes
+冰霜抗性	Frost Resistance	冰抗	CRes
+奥术抗性	Arcane Resistance	奥抗	ARes
+自然抗性	Nature Resistance	自然抗	NRes
+暗影抗性	Shadow Resistance	暗影抗	SRes

@@ -1,0 +1,40 @@
+MACRO 16777218 "AOE" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 暴风雪; 烈焰风暴
+END
+MACRO 16777219 "冰枪" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 冰枪术; 寒冰箭
+END
+MACRO 16777220 "冲灼" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 灼烧; 火焰冲击
+END
+MACRO 16777222 "冲蛋" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 奥术飞弹; 奥术冲击
+END
+MACRO 16777231 "水冰" INV_Misc_QuestionMark
+#showtooltips
+/cast [target=pet,nodead,exists] 冰冻术; 召唤水元素
+END
+MACRO 16777221 "球爆" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 炎爆术; 火球术
+END
+MACRO 16777229 "锥弹" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 奥术飞弹; 冰锥术
+END
+MACRO 16777223 "霜枪" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 冰枪术; 霜火之箭
+END
+MACRO 16777224 "霜盾" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 法力护盾; 冰霜新星
+END
+MACRO 16777230 "龙冲" INV_Misc_QuestionMark
+#showtooltips
+/cast [mod:alt] 冲击波; 龙息术
+END
