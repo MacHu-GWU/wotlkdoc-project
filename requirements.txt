@@ -1,6 +1,7 @@
-gspread-pandas
-loc
-pandas_mate
-pypinyin
+gspread-pandas==2.1.2
+loc==0.0.2
+pandas==0.23.4
+pandas_mate==0.0.3
+pypinyin==0.35.4
 sfm==0.0.16
 rstobj==0.0.5

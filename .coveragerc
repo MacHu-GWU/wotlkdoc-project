@@ -1,10 +1,13 @@
 # Coverage.py is a tool for measuring code coverage of Python programs.
-# for more info: https://coverage.readthedocs.io/en/coverage-4.4.1/config.html
+# for more info: https://coverage.readthedocs.io/en/latest/config.html
 [run]
 omit =
+    wotlkdoc/_version.py
+    wotlkdoc/cli.py
     wotlkdoc/pkg/*
     wotlkdoc/docs/*
     wotlkdoc/tests/*
+    wotlkdoc/handlers/*
 
 [report]
 # Regexes for lines to exclude from consideration

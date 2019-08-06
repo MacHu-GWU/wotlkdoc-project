@@ -1,6 +1,6 @@
 
 .. image:: https://readthedocs.org/projects/wotlkdoc/badge/?version=latest
-    :target: https://wotlkdoc.readthedocs.io/?badge=latest
+    :target: https://wotlkdoc.readthedocs.io/index.html
     :alt: Documentation Status
 
 .. image:: https://travis-ci.org/MacHu-GWU/wotlkdoc-project.svg?branch=master
