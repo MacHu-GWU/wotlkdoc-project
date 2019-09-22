@@ -34,6 +34,8 @@
     .unaura 58646
     .aura 58646
     .aura 55610
+    .aura 57399
+    .aura 53760
     /targetlasttarget
 
 
@@ -80,6 +82,8 @@
     .aura 57663
     .unaura 2895
     .aura 2895
+    .aura 57399
+    .aura 53755
     /targetlasttarget
 
 
@@ -119,6 +123,8 @@ Tank Buff (防御战士, 防御圣骑士, 防御死亡骑士, 熊坦德鲁伊)
     .unaura 58646
     .aura 58646
     .aura 55610
+    .aura 57399
+    .aura 53758
     /targetlasttarget
 
 
@@ -156,6 +162,8 @@ Tank有利Debuff (防御战士, 防御圣骑士, 防御死亡骑士, 熊坦德�
     .aura 57663
     .unaura 2895
     .aura 2895
+    .aura 57399
+    .aura 54212
     /targetlasttarget
 
 
