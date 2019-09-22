@@ -36,6 +36,7 @@
 无脑输出宏::
 
     #showtooltips
+    /cast [nostance] 暗影形态
     /castsequence [nochanneling] reset=target 吸血鬼之触, 心灵震爆, 精神鞭笞, 精神鞭笞, 精神鞭笞, 精神鞭笞
 
 
