@@ -74,3 +74,21 @@
 
     #showtooltip
     /cast [mod:alt,help] 联结治疗; [mod:alt,harm] 吸血鬼之触; [help] 快速治疗; [harm] 精神鞭笞; [mod:alt] 联结治疗; [] 快速治疗
+
+
+快速治疗 强效治疗术
+------------------------------------------------------------------------------
+
+.. code-block:: python
+
+    #showtooltips
+    /cast [mod:alt,target=mouseover,help][mod:alt,help][mod:alt,target=targettarget,help][mod:alt] 强效治疗术; [target=mouseover,help][help][target=targettarget,help][] 快速治疗
+
+
+驱散魔法 群体驱散
+------------------------------------------------------------------------------
+
+.. code-block:: python
+
+    #showtooltips
+    /cast [mod:alt,target=mouseover,help][mod:alt,help][mod:alt,target=targettarget,help][mod:alt] 群体驱散; [target=mouseover,help][help][target=targettarget,help][] 驱散魔法
