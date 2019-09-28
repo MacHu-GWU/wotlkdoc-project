@@ -7,7 +7,7 @@
     :local:
 
 
-智能释放 治疗类
+根据当前的目标是敌方或我方, 对不同的目标施放单个治疗技能或驱散技能类
 ------------------------------------------------------------------------------
 无论什么时候, 按住Alt键治疗自己. 不按住Alt键时, 鼠标悬停或者选择目标时, 如果目标是右方, 则治疗友方目标. 如果是敌方, 则治疗敌方的目标::
 
@@ -16,21 +16,31 @@
 
 条件判断的先后顺序为:
 
-- 只要按下了Alt键, 则是对自己释放治疗
-- 如果鼠标悬停是友方, 则对其释放治疗
-- 如果目标是友方, 则对其释放治疗 (在目标是敌方的时候, 该条件不生效)
-- 如果目标的目标是友方, 则对其释放治疗
-- 其他情况下, 按照正常释放治疗
+1. ``[modifier:alt,target=player]``: 只要按下了Alt键, 则是对自己释放治疗
+2. #1不成立, 检查 ``[target=mouseover,help]``: 如果鼠标悬停是友方, 则对其释放治疗
+3. #2不成立, 检查 ``[help]``: 如果目标是友方, 则对其释放治疗 (在目标是敌方的时候, 该条件不生效)
+4. #3不成立, 检查 ``[target=targettarget,help]``: 如果目标的目标是友方, 则对其释放治疗
+5. #4 不成立, 其他情况下, 按照正常释放治疗
 
 
-- 如果目标是 **友方**, 则对目标施放.
-- 如果目标的目标是 **友方**, 则对目标的目标施放.
+根据当前的目标是敌方或我方, 对不同的目标施放单个治疗技能或驱散技能类 用 Alt 绑定多个技能
+------------------------------------------------------------------------------
+
+**注意**, 由于我们需要用按下 Alt 来释放另一个技能, 不按 Alt 释放原技能, 所以我们必须取消 ``[modifier:alt,target=player]`` 这一用于对自己释放的语句.
+
+**注意**, 绑定两个技能时, 按下 Alt 键才能看到的技能最好是无 CD 技能, 这样就不用检测其冷却时间了.
+
+该命令的功能有, 鼠标悬停, 治疗友方, 治疗敌方的目标, 正常治疗. 不过同时绑定了两个治疗技能.
+
+治疗版本::
 
     #showtooltips
-    /cast [help][target=targettarget,help][] 圣光术
+    /cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 圣光术; [target=mouseover,help][help][target=targettarget,help][] 圣光闪现
+
+驱散版本::
 
     #showtooltips
-    /cast [help][target=targettarget,help][] 净化术
+    /cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 群体驱散; [target=mouseover,help][help][target=targettarget,help][] 驱散魔法
 
 
 智能释放 对敌人释放的技能
@@ -45,6 +55,15 @@
 
     #showtooltips
     /cast [harm][target=targettarget,harm][] 寒冰箭
+
+
+根据当前的目标是敌方或我方, 对其使用不同的技能
+------------------------------------------------------------------------------
+
+::
+
+    #showtooltips
+    /cast [harm]
 
 
 AH (交易相关命令)

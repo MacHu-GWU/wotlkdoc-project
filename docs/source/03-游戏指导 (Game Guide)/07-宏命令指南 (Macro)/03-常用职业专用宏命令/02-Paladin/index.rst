@@ -42,6 +42,12 @@
     /cast [mod:alt, target=mouseover] 圣光术; [target=mouseover] 圣光闪现
 
 
+.. image:: 指疗.png
+
+    #showtooltip
+    /cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 圣光术; [target=mouseover,help][help][target=targettarget,help][] 圣光闪现
+
+
 正义之锤和正义盾击
 ------------------------------------------------------------------------------
 
