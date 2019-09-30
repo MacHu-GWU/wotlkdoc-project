@@ -16,7 +16,7 @@
 - 5: 1 Tank, 3 DPS, 1 Healer (3.5 DPS)
 - 10: 2 Tank, 5 DPS, 3 Healer (7 DPS)
 - 25: 2 Tank, 17 DPS, 6 Healer (18 DPS)
-- 40: 5 Tank, 25 DPS, 10 Healer (27 DPS)
+- 40: 5 Tank, 23 DPS, 12 Healer (25 DPS)
 
 ICC 毕业装备的 **护甲减伤**, 例如刚 80 的蓝装坦克减伤在 50% 左右, ICC 毕业后在 50%.
 
@@ -28,17 +28,76 @@ ICC 毕业装备的 **护甲减伤**, 例如刚 80 的蓝装坦克减伤在 50% 
 - 布甲: - 15% (不变)
 
 
+怪物血量设置
+------------------------------------------------------------------------------
+由于采用给玩家添加 造成的所有伤害增加 X% Buff 的方法, 在叠加公式的影响下, 会带来严重的叠加效果. 比如 圣骑士的腐化圣印, 以及火法的点燃, 在增加100%伤害的情况下, 实际情况是变成4倍伤害. 使得很难平衡职业. 所以采用在服务器端设置修改怪物的血量, 才是比较好的解决方案.
+
+
+正常::
+
+    #--- HP Rate ---
+    Rate.Creature.Normal.HP          = 1
+    Rate.Creature.Elite.Elite.HP     = 1
+    Rate.Creature.Elite.RARE.HP      = 1
+    Rate.Creature.Elite.RAREELITE.HP = 1
+    Rate.Creature.Elite.WORLDBOSS.HP = 1
+
+
+5人小队副本, 3.5 DPS, 1 / 3.5 = 0.286::
+
+    #--- HP Rate 5 Dungeon, 3.5 DPS, 1 / 3.5 = 0.286 ---
+    Rate.Creature.Normal.HP          = 0.286
+    Rate.Creature.Elite.Elite.HP     = 0.286
+    Rate.Creature.Elite.RARE.HP      = 0.286
+    Rate.Creature.Elite.RAREELITE.HP = 0.286
+    Rate.Creature.Elite.WORLDBOSS.HP = 0.286
+
+
+10人团队副本, 7 DPS, 1 / 7 = 0.143::
+
+    #--- HP Rate 10 Raid, 7 DPS, 1 / 7 = 0.143 ---
+    Rate.Creature.Normal.HP          = 0.143
+    Rate.Creature.Elite.Elite.HP     = 0.143
+    Rate.Creature.Elite.RARE.HP      = 0.143
+    Rate.Creature.Elite.RAREELITE.HP = 0.143
+    Rate.Creature.Elite.WORLDBOSS.HP = 0.143
+
+
+25人团队副本, 18 DPS, 1 / 18 = 0.055::
+
+    #--- HP Rate 25 Raid, 18 DPS, 1 / 18 = 0.056 ---
+    Rate.Creature.Normal.HP          = 1
+    Rate.Creature.Elite.Elite.HP     = 1
+    Rate.Creature.Elite.RARE.HP      = 1
+    Rate.Creature.Elite.RAREELITE.HP = 1
+    Rate.Creature.Elite.WORLDBOSS.HP = 1
+
+
+40人团队副本, 23 DPS, 1 / 25 = 0.04::
+
+    #--- HP Rate 40 Raid, 25 DPS, 1 / 25 = 0.04 ---
+    Rate.Creature.Normal.HP          = 0.04
+    Rate.Creature.Elite.Elite.HP     = 0.04
+    Rate.Creature.Elite.RARE.HP      = 0.04
+    Rate.Creature.Elite.RAREELITE.HP = 0.04
+    Rate.Creature.Elite.WORLDBOSS.HP = 0.04
+
+
+
 Solo 团队副本时的血量设置
 ------------------------------------------------------------------------------
 
-使用如下宏, 将血量调整至 (5 倍坦克血量的:
+按两下下面的宏, 将血量提升至4倍, 并每秒回复3%的生命 (Buff前生命的12%)
 
-- WLK
-- TBC:
--
+血限, +100%耐力::
 
-血限, +50%耐力::
-
+    /target player
+    .aura 71953
+    .aura 19259
+    .aura 19259
+    .aura 19259
+    .aura 19259
+    .aura 19259
     .aura 19259
     .aura 19259
     .aura 19259
@@ -46,19 +105,77 @@ Solo 团队副本时的血量设置
     .aura 19259
 
 
-作弊额外 Buff减伤
+::
 
-- 板甲DPS: 40%, 最终减伤 (1 - 0.5 * (1 - 40%)) = 70%
-- 锁甲拿盾萨满: 40%, 最终减伤 (1 - 0.5 * (1 - 40%)) = 70%
-- 锁甲不拿盾: 40%, 最终减伤 (1 - 0.5 * (1 - 40%)) = 70%
-- 皮甲: 60%, 最终减伤 (1 - 0.75 * (1 - 60%)) = 70%
-- 布甲: 65%, 最终减伤 (1 - 0.85 * (1 - 65%)) = 70%
+.aura 71953 每3秒为团队成员回复3%的生命
+.unaura 19259 降低所有伤害降低6%
 
 
-治疗
+减伤系数"
 
-- 坦克: 使用
-- 近战
+- **板甲DPS**, 40%, 最终减伤 (1 - 0.5 * (1 - 40%)) = 70%::
+
+    /target player
+    .unaura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+
+- **锁甲拿盾萨满**, 40%, 最终减伤 (1 - 0.5 * (1 - 40%)) = 70%::
+
+    /target player
+    .unaura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+
+- **锁甲不拿盾**, 54%, 最终减伤 (1 - 0.5 * (1 - 54%)) = 70%::
+
+    /target player
+    .unaura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+
+- **皮甲**, 60%, 最终减伤 (1 - 0.75 * (1 - 60%)) = 70%::
+
+    /target player
+    .unaura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+
+- **布甲**, 65%, 最终减伤 (1 - 0.85 * (1 - 65%)) = 70%::
+
+    /target player
+    .unaura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
+    .aura 31383
 
 30
 
