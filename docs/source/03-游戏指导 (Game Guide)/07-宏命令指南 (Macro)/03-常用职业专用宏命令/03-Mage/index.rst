@@ -16,19 +16,23 @@
 1.
 2. .. code-block:: python
 
-    #showtooltips
-    /cast [mod:alt] 冰枪术; 寒冰箭
+    #showtooltip
+    /cast [mod:alt,help] 专注魔法; [mod:alt,harm] 炎爆术; [help] 解除诅咒; [harm] 火球术; [mod:alt] 专注魔法; [] 解除诅咒
 
 3. .. code-block:: python
 
     #showtooltips
     /cast [mod:alt,help] 魔法增效; [mod:alt,harm] 灼烧; [help] 魔法抑制; [harm] 火焰冲击; [mod:alt] 魔法增效; [] 魔法抑制
 
-4. .. code-block::
+4. .. code-block:: python
 
-    #showtooltips
-    #showtooltips
-    /cast [mod:alt]  ; 火焰冲击
+    #showtooltip
+    /cast [mod:alt] 魔爆术; 冰霜新星
+
+5. .. code-block:: python
+
+    #showtooltip
+    /cast [mod:alt] 魔爆术; 冰霜新星
 
 
 火系主力伤害技能 - 火球术 和 炎爆术
@@ -37,7 +41,7 @@
 .. code-block:: python
 
     #showtooltip
-    /cast [mod:alt] 炎爆术; 火球术
+    /cast [mod:alt,help] 专注魔法; [mod:alt,harm] 炎爆术; [help] 解除诅咒; [harm] 火球术; [mod:alt] 专注魔法; [] 解除诅咒
 
 
 冰系主力伤害技能 - 寒冰箭 和 冰枪术
@@ -45,8 +49,8 @@
 
 .. code-block:: python
 
-    #showtooltips
-    /cast [mod:alt] 冰枪术; 寒冰箭
+    #showtooltip
+    /cast [mod:alt,help] 专注魔法; [mod:alt,harm] 霜火之箭; [help] 解除诅咒; [harm] 寒冰箭; [mod:alt] 专注魔法; [] 解除诅咒
 
 
 奥系主力伤害技能 - 奥术飞弹 和 奥术冲击
@@ -55,7 +59,7 @@
 .. code-block:: python
 
     #showtooltip
-    /cast [mod:alt] 奥术飞弹; 奥术冲击
+    /cast [mod:alt,help] 专注魔法; [mod:alt,harm] 奥术飞弹; [help] 解除诅咒; [harm] 奥术冲击; [mod:alt] 专注魔法; [] 解除诅咒
 
 
 冰火系主力伤害技能 - 霜火箭 和 冰枪术
@@ -114,9 +118,6 @@
     /cast [mod:alt] 奥术飞弹; 冰锥术
 
 
-
-
-
 霜火箭和冰枪术
 ------------------------------------------------------------------------------
 将 ``霜火箭``, 和 ``冰枪术`` 绑定到一个键位上::
@@ -147,7 +148,7 @@
 .. code-block:: python
 
     #showtooltip
-    /cast [mod:alt,help] 奥术集中; [mod:alt,harm] 奥术飞弹; [help] 驱散诅咒; [harm] 奥术冲击; [mod:alt] 奥术集中; [] 驱散诅咒
+    /cast [mod:alt,help] 专注魔法; [mod:alt,harm] 奥术飞弹; [help] 解除诅咒; [harm] 奥术冲击; [mod:alt] 专注魔法; [] 解除诅咒
 
 
 坐骑
