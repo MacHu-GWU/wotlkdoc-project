@@ -61,11 +61,12 @@
 
 .. code-block:: python
 
-    #showtooltip
-    /cast [nostance:2] 防御姿态;
-    /use [noequipped:Shields,stance:2] 某盾牌;
-    /use 某武器;
-    /cast [stance:2] 盾牌反射;
+    #showtooltip 法术反射
+    /cancelaura 利刃风暴
+    /stopcasting
+    /equip 平衡的觅心者
+    /equip 铁质棺材板
+    /cast [stance:1/2] 法术反射; [stance:3] 防御姿态
 
 
 切换到战斗姿态使用压制
@@ -77,6 +78,6 @@
 
 .. code-block:: python
 
-    #showtooltip
-    /equip [noequipped:Two-Handed Axes] 影之哀伤
-    /cast [nostance:1] 战斗姿态; [equipped:Two-Handed Axes] 致死打击
+    #showtooltip 压制
+    /equip 染血的奥金斧
+    /cast [stance:1] 压制; [stance:1/3] 战斗姿态
