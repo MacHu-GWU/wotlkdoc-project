@@ -6,7 +6,7 @@
 .. image:: WOWClientGuide.png
 
 
-键位信息
+动作条键位信息
 -------------------------------------------------------------------------------
 ``account_name`` 是你登陆游戏时的账号
 
@@ -14,6 +14,11 @@
 
 - 通用设置文件保存在 ``World of Warcraft/WTF/Account/<account_name>/bindings-cache.wtf``
 - 角色设置文件保存在 ``World of Warcraft/WTF/Account/<account_name>/<server_name>/<character_name>/bindings-cache.wtf``
+
+
+动作条摆放设置
+------------------------------------------------------------------------------
+每个动作条上摆了什么技能的记录保存在服务器的数据库中.
 
 
 宏命令信息
@@ -37,21 +42,19 @@
 WTF 文件夹内的文件说明
 ------------------------------------------------------------------------------
 
-- /WTF
-- /WTF/Config.wtf: Resolution, Video, Audio Setting. Globally available to any account. (客户端设定, 图像质量, 圣印)
-- /WTF/Account
-- /WTF/Account/<account_id>: Per Account Setting (on different server, different character)
-- /WTF/Account/<account_id>/bindings-cache.wtf: Key binding. (快捷键设置)
-- /WTF/Account/<account_id>/macros-cache.txt: general macro config. will be used for all server, all character (通用宏命令设置)
-- /WTF/Account/<account_id>/config-cache.txt: game interface config, like auto-loot,  display percentage text (用户界面设置, 比如自动拾取, 显示百分比等)
-- /WTF/Account/<account_id>/cache.md5: all cache file md5, if you want to copy your account level config files to other place, copy this file with them.
-- /WTF/Account/<account_id>/SavedVariables/: addons global config setting, like default profile. (插件的通用设置, 比如domino的动作条设置, 如果你要将该账号下的设置应用到其他账号, 请拷贝整个文件夹)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/AddOns.txt: choose to enable or disable which addons. (选择开启或关闭哪些插件)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/bindings-cache.wtf: character only key binding config. (角色专用快捷键设置)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/chat-cache.txt: chat window config and cache. (聊天窗口设置)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/config-cache.wtf: additional interface config, like talend previewer(额外的用户界面设置, 例如天赋浏览器)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/layout-local.txt: character only interface window layout (用户界面布局, 各个窗口的位置)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/macros-cache.txt: character only macro (角色专用宏命令)
-- /WTF/Account/<account_id>/<server_id>/<character_name>/SavedVariables/: character only addon config (角色专用的插件设置)
-
-## Config once, Apply it Everywhere
+- ``/WTF``
+- ``/WTF/Config.wtf``: Resolution, Video, Audio Setting. Globally available to any account. (客户端设定, 图像质量, 圣印)
+- ``/WTF/Account``
+- ``/WTF/Account/<account_id>``: Per Account Setting (on different server, different character)
+- ``/WTF/Account/<account_id>/bindings-cache.wtf``: Key binding. (快捷键设置)
+- ``/WTF/Account/<account_id>/macros-cache.txt``: general macro config. will be used for all server, all character (通用宏命令设置)
+- ``/WTF/Account/<account_id>/config-cache.txt``: game interface config, like auto-loot,  display percentage text (用户界面设置, 比如自动拾取, 显示百分比等)
+- ``/WTF/Account/<account_id>/cache.md5``: all cache file md5, if you want to copy your account level config files to other place, copy this file with them.
+- ``/WTF/Account/<account_id>/SavedVariables/``: addons global config setting, like default profile. (插件的通用设置, 比如domino的动作条设置, 如果你要将该账号下的设置应用到其他账号, 请拷贝整个文件夹)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/AddOns.txt``: choose to enable or disable which addons. (选择开启或关闭哪些插件)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/bindings-cache.wtf``: character only key binding config. (角色专用快捷键设置)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/chat-cache.txt``: chat window config and cache. (聊天窗口设置)
+- /WTF``/Account/<account_id>/<server_id>/<character_name>/config-cache.wtf``: additional interface config, like talend previewer(额外的用户界面设置, 例如天赋浏览器)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/layout-local.txt``: character only interface window layout (用户界面布局, 各个窗口的位置)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/macros-cache.txt``: character only macro (角色专用宏命令)
+- ``/WTF/Account/<account_id>/<server_id>/<character_name>/SavedVariables/``: character only addon config (角色专用的插件设置)
