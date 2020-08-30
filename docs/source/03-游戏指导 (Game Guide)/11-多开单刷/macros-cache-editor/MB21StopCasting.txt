@@ -1,0 +1,3 @@
+#showtooltip
+#stop casting
+/stopcasting

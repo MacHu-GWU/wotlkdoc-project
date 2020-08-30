@@ -1,0 +1,4 @@
+#showtooltip
+#target focus's target's target
+/assist focus
+/assist

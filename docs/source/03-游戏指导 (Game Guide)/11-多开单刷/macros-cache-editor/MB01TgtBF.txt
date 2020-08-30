@@ -1,0 +1,3 @@
+#showtooltip
+#select main tank
+/target Batlefury

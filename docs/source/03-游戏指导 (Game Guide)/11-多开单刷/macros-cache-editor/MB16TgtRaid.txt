@@ -1,0 +1,3 @@
+#showtooltip
+#target random raid member
+/target raid
