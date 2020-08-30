@@ -1,0 +1,3 @@
+#showtooltip
+#target focus
+/target focus

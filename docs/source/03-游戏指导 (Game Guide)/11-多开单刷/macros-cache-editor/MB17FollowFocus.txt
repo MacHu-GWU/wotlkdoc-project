@@ -1,0 +1,3 @@
+#showtooltip
+#follow focus
+/follow focus

@@ -1,0 +1,3 @@
+#showtooltip
+#click the first option of pop up window
+/click StaticPopup1Button1

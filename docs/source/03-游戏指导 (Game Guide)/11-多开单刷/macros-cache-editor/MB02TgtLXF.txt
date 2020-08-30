@@ -1,0 +1,3 @@
+#showtooltip
+#select off tank
+/target Luxiaofeng

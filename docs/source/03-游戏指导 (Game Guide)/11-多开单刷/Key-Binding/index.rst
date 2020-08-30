@@ -1,0 +1,17 @@
+- Stop Casting: Alt Ctrl Shift C
+- Stop Attacking: Alt Ctrl Shift A
+- Focus Target (set current target as focus): Alt Shift O
+- Target Focus: Alt Shift F
+- Target Mouseover: Alt Shift M
+- Interact With Mouseover: Alt Shiift J
+- Interact With Target: J
+
+- Z, T, G, X
+- Shift / Ctrl / Alt + Z, T, G, C
+- Alt F1, Alt F2, Shift F1, Shift F2
+- Shift C, R, F, G, Tab
+- Ctrl + E / R / F
+- Alt + E / R / F
+- Alt + A / S / D
+- 中建, Shift+中建, Alt+中建
+- Ctrl / Shift / Alt + ~
