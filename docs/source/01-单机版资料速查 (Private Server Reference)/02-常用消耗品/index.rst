@@ -7,11 +7,9 @@
     :depth: 2
     :local:
 
-.. image:: /_static/images/consumable-icon/食物.png
-.. image:: /_static/images/consumable-icon/饮料.png
-.. image:: /_static/images/consumable-icon/合剂.png
-.. image:: /_static/images/consumable-icon/药剂.png
-.. image:: /_static/images/consumable-icon/药水.png
+.. image:: /_static/images/icon/inv_misc_fish_52.png
+.. image:: /_static/images/icon/inv_potion_06.png
+.. image:: /_static/images/icon/inv_potion_41.png
 
 ------
 
@@ -37,6 +35,16 @@ WLK各类职业所需消耗品GM命令
 
     # 食物
     .aura 57399 # 盛鱼宴, 80AP 46SP 40耐
+    .aura 57371 # 龙鳞鱼片, 40力量 40耐
+    .aura 57367 # 熏烤龙鳞鱼, 40敏捷 40耐
+    .aura 57325 # 水煮北地蚌背鱼, 80AP 40耐
+    .aura 57327 # 爆炒鲑鱼, 46SP 40耐
+    .aura 57329 # 香辣虫肉汉堡, 40暴击 40耐
+    .aura 57332 # 帝王鳐鱼片, 40急速 40耐
+    .aura 57360 # 钳鱼大餐, 40命中 40耐
+    .aura 57356 # 虫犀肉排, 40精准 40耐
+    .aura 57334 # 香辣油炸青鱼, 20MP5 40耐
+    .aura 57358 # 犀牛大餐, 40破甲 40耐
 
     # 合剂
     .aura 53758 # 1300 HP
