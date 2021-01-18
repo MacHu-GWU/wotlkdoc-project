@@ -1,2 +1,2 @@
 #showtooltip
-/focus
+/clearfocus
