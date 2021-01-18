@@ -1,3 +1,0 @@
-#showtooltip
-#target last target
-/targetlasttarget
