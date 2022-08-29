@@ -21,6 +21,7 @@ PNG Quant 的详细用法如下:
    :language: python
 """
 
+import typing as T
 import mpire
 import subprocess
 from pathlib import Path
@@ -38,26 +39,43 @@ def compress_image(in_path: Path, out_path):
     ])
 
 
-def compress_many_image_in_dir(in_dir: Path, out_dir: Path):
-    pass
+def compress_many_image_in_dir(
+    in_dir: Path,
+    out_dir: Path,
+    extensions: T.List[str] = None,
+):
+    if extensions is None:
+        extensions = ["*.png"]
+    path_set: T.Set[Path] = set()
+    for ext in extensions:
+        for in_path in in_dir.glob(f"**/{ext}"):
+            path_set.add(in_path)
+    path_list = list(path_set)
+    path_list.sort()
+    args = list()
+    for in_path in path_list:
+        out_path = out_dir / in_path.relative_to(in_dir)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        args.append(dict(
+            in_path=in_path,
+            out_path=out_path,
+        ))
+
+    with mpire.WorkerPool() as pool:
+        pool.map(compress_image, args)
 
 
-# in_dir = Path("/Users/sanhehu/Documents/GitHub/wotlkdoc-project/docs/source/_static/image/armor")
-
+# Define before and after
 dir_here: Path = Path(__file__).absolute().parent
 dir_project_root: Path = dir_here.parent.parent
 
-dir_example_before = dir_here / "before"
-dir_example_after = dir_here / "after"
-# dir_after.mkdir(parents=True, exist_ok=True)
-#
-# args = list()
-# for in_path in dir_before.glob("**/*.png"):
-#     out_path = dir_after / in_path.name
-#     args.append(dict(
-#         in_path=in_path,
-#         out_path=out_path,
-#     ))
-#
-# with mpire.WorkerPool() as pool:
-#     results = pool.map(compress_image, args)
+dir_example_before = dir_here / "example" / "before"
+dir_example_after = dir_here / "example" / "after"
+
+compress_many_image_in_dir(
+    dir_example_before,
+    dir_example_after,
+    extensions=[
+        "*.png",
+    ],
+)

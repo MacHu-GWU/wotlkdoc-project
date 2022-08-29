@@ -2,3 +2,4 @@
 pathlib_mate                            # autopep8 your code
 twine                                   # make distribution archive
 wheel                                   # make pre-compiled distribution package
+mpire                                   # multi-process
