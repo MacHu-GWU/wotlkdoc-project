@@ -22,9 +22,22 @@ AWS 准备工作概览:
 5. 下载 DBeaver 开源万能数据库连接软件.
 
 
+**创建 EC2 Instance**
+
+-
+
+
 2. Linux Requirements 服务器准备工作
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 由于服务器核心的代码是用 C++ 写的, 而 C++ 代码需要在对应的平台 (Linux, Windows) 先编译成可执行机器码才能运行. 而编译是需要很多工具链的. 除此之外我们还需数据库软件来运行服务器数据库. 这一步的主要任务就是安装这些工具链.
+
+
+**SSH Connect to Ubuntu Server**::
+
+    # 3.227.85.43 是我的 EIP 公网 IP, 你不用尝试攻击了, AWS 有防火墙的.
+    # ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem 是我用来存放秘钥的路径.
+    ssh -i ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem ubuntu@3.227.85.43
+    ssh -i ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem ubuntu@34.200.233.47
 
 总结来说我们需要以下依赖::
 
@@ -80,12 +93,7 @@ AWS 准备工作概览:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 这一步的主要任务是将核心的源代码编译成可执行程序.
 
-**SSH Connect to Ubuntu Server**::
 
-    # 3.227.85.43 是我的 EIP 公网 IP, 你不用尝试攻击了, AWS 有防火墙的.
-    # ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem 是我用来存放秘钥的路径.
-    ssh -i ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem ubuntu@3.227.85.43
-    ssh -i ~/ec2-pem/aws-data-lab-sanhe/us-east-1/aws-data-lab-sanhe-dev.pem ubuntu@34.200.233.47
 
 确保此时你在 ``${HOME}`` 路径下, 你打 ``pwd`` 命令返回的是 ``/home/ubuntu`` 就说明是对的.
 
