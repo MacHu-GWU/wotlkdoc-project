@@ -85,7 +85,7 @@ def create_restore_image_task(
 ):
     """
     从 S3 恢复 AMI 镜像.
-    
+
     Reference:
 
     - https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_restore_image_task
