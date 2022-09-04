@@ -4,6 +4,7 @@
 ==============================================================================
 无论是单机玩家还是服务器管理员, 如果能从你的手机上对服务器进行一些简单的控制, 例如查询状态, 启动, 关闭, 重启, 那简直是太棒了.
 
+这里有两个难点:
 
 1. 如何用你的手机远程控制服务器.
 2. 如何优雅的在服务器上远程执行命令.
@@ -31,6 +32,17 @@ AWS 有一个历史悠久的服务 SSM (System Manager). 你在启动 EC2 的时
 .. literalinclude:: ./example.py
    :language: python
 
+参考资料:
 
-- https://aws.amazon.com/getting-started/hands-on/remotely-run-commands-ec2-instance-systems-manager/
-- https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.send_command
+- 用 SSM 远程执行命令的官方教程: https://aws.amazon.com/getting-started/hands-on/remotely-run-commands-ec2-instance-systems-manager/
+- 发送命令的 Python API 文档: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.send_command
+
+
+实现你的手机服务器控制台
+------------------------------------------------------------------------------
+现在我们就很明确了, 我们要做这几件事:
+
+1. 创建一个 SNS Topic
+2. 在 Pinpoint 注册一个电话号码, 并设置为收到的所有短信都转发到 SNS Topic
+3. 创建一个 Lambda Function, 里面实现了根据你的短信内容做不同的事的逻辑. 其主要是在游戏服务器的 EC2 上执行代码.
+4. 自己决定这个 Lambda Function 要给手机回什么短信.
