@@ -8,3 +8,4 @@ smart_open==5.2.1
 s3pathlib==1.0.11
 jmespath==0.10.0
 chalice==1.26.5
+cottonformation==0.0.8
