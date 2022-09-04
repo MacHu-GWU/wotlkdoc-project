@@ -76,5 +76,3 @@ class MainStack(cf.Stack):
         self.mk_rg1()
         self.mk_rg2()
         self.mk_rg3()
-
-"""
