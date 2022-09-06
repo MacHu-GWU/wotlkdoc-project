@@ -5,7 +5,7 @@ Package Description.
 """
 
 __version__ = "0.0.1"
-__short_description__ = "Package short description."
+__short_description__ = "World of Warcraft - The Wrath of Lich King Document"
 __license__ = "MIT"
 __author__ = "Sanhe Hu"
 __author_email__ = "husanhe@gmail.com"

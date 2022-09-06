@@ -1,4 +1,4 @@
-polars
+polars==0.14.5
 pypinyin==0.47.1
 rstobj==0.0.7
 boto3==1.24.66
