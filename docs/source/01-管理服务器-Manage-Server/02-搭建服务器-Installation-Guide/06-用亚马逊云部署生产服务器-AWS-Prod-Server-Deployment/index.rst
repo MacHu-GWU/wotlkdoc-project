@@ -2,15 +2,16 @@
 
 用亚马逊云部署生产服务器 AWS Prod Server Deployment
 ==============================================================================
+deploy azerothcore (AC) wotlk wow private server to AWS.
 
 
-架构选择
+1. 架构选择
 ------------------------------------------------------------------------------
 - 游戏服务器: 部署在位于 VPC Public Subnet 上的 EC2 中.
 - 数据库: 使用 RDS MySQL. 注意, 请不要使用 Aurora MySQL compatible version. 因为 Aurora 的 Storage engine 是完全重新设计的, 和 MySQL 的完全不同. AC 的一些 SQL 要求使用旧款的 ``MyISAM`` 存储引擎, 这是 Aurora 所不支持的.
 
 
-为游戏服务器选择 EC2 类型
+2. 为游戏服务器选择 EC2 Type
 ------------------------------------------------------------------------------
 根据 AC Wiki 上 https://www.azerothcore.org/wiki/memory-usage 的说法, 当游戏玩家探索到一片地图后, 这个区域的地图就会被加载进内存, 而玩家多的时候几乎所有的地图都会被加载进内存, 这些地图至少占用 11G 左右. 而且操作系统本身大约会占用 1G 左右的内存. 而且大约每 100 个玩家需要占用 1G 内存. 你需要留给服务器大约 1 - 2G 内存左右供临时使用. 根据这篇 AC 上的讨论 https://github.com/azerothcore/azerothcore-wotlk/discussions/3891, 维护者 FrancescoBorzi 说了, CPU 一般不是瓶颈, 而 RAM 才是. < 200 个玩家的话, 16GB 内存是足够了的. 这和我们之前计算的 200 玩家 = 11G  + 2G + 1G = 占用 14G 内存一致.
 
@@ -39,7 +40,7 @@
 - Term contract: https://aws.amazon.com/ec2/pricing/reserved-instances/pricing/
 
 
-为游戏数据库选择 Instance Type
+3. 为游戏数据库选择 Instance Type
 ------------------------------------------------------------------------------
 选择合适的数据库大小要考虑两个维度:
 
@@ -60,7 +61,77 @@
 - Pricing: https://aws.amazon.com/rds/mysql/pricing/
 
 
-配置数据库
+4. 安装核心
+------------------------------------------------------------------------------
+这一步的主要任务是将核心的源代码编译成可执行程序.
+
+**首先我们要 SSH 登录到 Ubuntu 服务器上**
+
+.. code-block:: bash
+
+    # 111.111.111.111 是你的 IP
+    # /path/to/your/key/file.pem 是我用来存放秘钥的路径.
+    ssh -i /path/to/your/key/file.pem ubuntu@111.111.111.111
+
+第一次连接的时候会问你是否要将这个服务器添加为可信服务器, 打 Y 即可. 进去以后确认此时你在 ``${HOME}`` 路径下, 你打 ``pwd`` 命令返回的是 ``/home/ubuntu`` 就说明是对的.
+
+**然后要从 GitHub 获取 Azeroth Core 源代码**
+
+.. code-block:: bash
+
+    git clone https://github.com/azerothcore/azerothcore-wotlk.git --branch master --single-branch azerothcore
+
+**从源码编译游戏服务器**
+
+.. code-block:: bash
+
+    # 移动到 azerothcore 仓库内
+    cd azerothcore
+    # 创建并移动到 build 目录
+    mkdir build
+    cd build
+    # 注意! 请确保你现在已经在 azerothcore/build 目录下了, 打 pwd 命令返回的应该是 /home/ubuntu/azerothcore/build
+    # 在运行下面 CMake 代码之前, 下面的 $HOME/azeroth-server 是编译好的服务器路径, 你可以改, 也可以不改
+    # 如果你改了之后, 后面的自动化代码也要跟着改
+    cmake ../ -DCMAKE_INSTALL_PREFIX=$HOME/azeroth-server/ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DWITH_WARNINGS=1 -DTOOLS=0 -DSCRIPTS=static -DMODULES=static
+
+    # 查看你的服务器有多少个 CPU 核心, 这个数字要作为参数用在后面的命令中
+    nproc --all
+
+    # 构建服务器, 这一步完成之后 $HOME/azeroth-server 里会出现一个 ``bin`` 和 ``etc`` 文件夹
+    make -j 4
+    make install
+
+**下载并解压地图数据文件**
+
+服务器是需要知道一些客户端数据的, 例如地图数据, 是用来判定你和目标之间是否有视野, 有没有被墙壁阻拦, 空气墙在哪里等. 这些地图数据文件很大, 不适合放在服务器代码上. 这些数据文件原本是用特殊工具从游戏客户端上提取出来的 (游戏客户端也有这些文件, 方便于在本地做计算, 客户端连上服务器后会比较服务器和自己的 MD5 值, 如果不对说明客户端作弊了) Azeroth Core 有使用这些工具的教程. 不过 Azeroth Core 团队还定期提取这些文件, 并发布供玩家下载.
+
+.. code-block:: bash
+
+    # 回到用户主目录
+    cd $HOME
+
+    # 创建一个目录
+    mkdir azeroth-server-data
+    cd azeroth-server-data
+
+    # 打开 https://github.com/wowgaming/client-data/releases/ 页面
+    # 右键点击 data.zip 查看下载链接, 例如目前版本的是 https://github.com/wowgaming/client-data/releases/download/v15/data.zip
+    # 用 wget 命令下载
+    wget https://github.com/wowgaming/client-data/releases/download/v15/data.zip
+
+    # 安装 unzip 解压工具
+    sudo apt install unzip
+
+    # 解压 data.zip 文件, 此时会在 $HOME/azeroth-server-data 目录下创建 5 个文件夹
+    unzip data.zip
+
+参考资料:
+
+- https://www.azerothcore.org/wiki/linux-core-installation
+
+
+5. 配置数据库
 ------------------------------------------------------------------------------
 .. code-block:: bash
 
