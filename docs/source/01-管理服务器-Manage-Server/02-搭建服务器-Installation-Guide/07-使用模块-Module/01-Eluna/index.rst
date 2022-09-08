@@ -27,4 +27,7 @@ Eluna 是一个允许你在服务端添加 Lua 脚本的模块. 本质上跟 WOW
 而 ``OnLogin`` 则是一个函数, 用来处理 PlayerEvent 的数据. 这个函数具体有哪些参数同样可以在 https://github.com/ElunaLuaEngine/Eluna/blob/master/Hooks.h 中找到. 根据文档, 它有两个参数.
 
 
-E
+安装 mod_eluna 的坑
+------------------------------------------------------------------------------
+
+在 ``mod_LuaEngine.conf`` 配置文件中的 ``Eluna.ScriptPath`` 选项, 里面的路径最好用绝对路径而不要用相对路径.
