@@ -15,7 +15,8 @@
     .learn 54197 Northern Fly
     .learn 40733 Sheng Dun Shu
     .learn 72286 Wu Di Zuo Qi
-    .learn 61447 Mammon
+    .learn 61447 Mammon 部落
+    .learn 61426 Mammon 联盟
 
 4. 学习武器技能::
 
