@@ -122,9 +122,14 @@
 table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
     content: " \25B4\25BE"
 }
-table.sortable tbody tr:nth-child(2n) td {
-  background: #ffffff;
-}
-table.sortable tbody tr:nth-child(2n+1) td {
-  background: #f2f2f2;
-}
+
+/*
+the sortable.js library cannot automatically change color schema alone with furo theme
+so better comment it out
+*/
+/*table.sortable tbody tr:nth-child(2n) td {*/
+/*  background: #ffffff;*/
+/*}*/
+/*table.sortable tbody tr:nth-child(2n+1) td {*/
+/*  background: #f2f2f2;*/
+/*}*/
