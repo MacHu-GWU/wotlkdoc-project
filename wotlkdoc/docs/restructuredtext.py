@@ -31,6 +31,7 @@ def with_columns(
     exprs = [
         pl.col(col)
         for col in df.columns
+        if col not in named_funcs
     ]
     for col, func in named_funcs.items():
         expr = (

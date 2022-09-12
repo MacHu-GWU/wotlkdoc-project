@@ -2,7 +2,7 @@
 
 from pathlib_mate import Path
 from rstobj import Image
-from ..paths import dir_source
+from ..paths import dir_source, dir_static
 
 
 def image_path_to_href(img_path: str):
@@ -34,19 +34,58 @@ def image_path_to_rst_obj(
     )
 
 
-img_map_cities = dict(
-    暴风城="https://i.imgur.com/R8weKXG.jpg",
-    铁炉堡="https://i.imgur.com/AuwY8LS.jpg",
-    达纳苏斯="https://i.imgur.com/1rM26v9.jpg",
-    埃索达="https://i.imgur.com/wuNMwBM.jpg",
-    奥格瑞玛="https://i.imgur.com/73LM6Ci.jpg",
-    雷霆崖="https://i.imgur.com/1kHg64r.jpg",
-    幽暗城="https://i.imgur.com/tTBYyim.jpg",
-    银月城="https://i.imgur.com/tKYBFap.jpg",
-    沙塔斯城="https://i.imgur.com/NO134U7.jpg",
-    达拉然="https://i.imgur.com/bH5O89K.jpg",
+dir_image = dir_static / "image"
+
+dir_class_icon = dir_image / "class-icon"
+
+_class_icon_mapper = dict(
+    战士="01-Warrior.png",
+    圣骑士="02-Paladin.png",
+    死亡骑士="03-DeathKnight.png",
+    死骑="03-DeathKnight.png",
+    猎人="04-Hunter.png",
+    萨满="05-Shaman.png",
+    盗贼="06-Rogue.png",
+    德鲁伊="07-Druid.png",
+    法师="08-Mage.png",
+    术士="09-Warlock.png",
+    牧师="10-Priest.png",
+    全部="All.png",
+    warrior="01-Warrior.png",
+    paladin="02-Paladin.png",
+    deathknight="03-DeathKnight.png",
+    dk="03-DeathKnight.png",
+    hunter="04-Hunter.png",
+    shaman="05-Shaman.png",
+    rogue="06-Rogue.png",
+    druid="07-Druid.png",
+    mage="08-Mage.png",
+    warlock="09-Warlock.png",
+    priest="10-Priest.png",
+    all="All.png",
 )
 
+
+def image_by_class(class_: str) -> Image:
+    img_path = dir_class_icon / _class_icon_mapper[class_]
+    return image_path_to_rst_obj(img_path=img_path)
+
+
+dir_map = dir_image / "map"
+dir_main_city = dir_map / "03-主城"
+
+def image_by_main_city(main_city: str) -> Image:
+    img_path = dir_main_city / f"{main_city}.jpg"
+    return image_path_to_rst_obj(img_path=img_path)
+
+# dir_eastern_kingdom =  dir_map / "11-东部王国"
+# dir_kalimdor =  dir_map / "11-东部王国"
+# dir_outland =  dir_map / "21-外域"
+# dir_northrend =  dir_map / "31-北裂境"
+
+
+def image_by_map(map_name: str) -> Image:
+    pass
 img_map_tbc = dict(
     地狱火半岛="https://i.imgur.com/MueAcLX.jpg",
     赞加沼泽="https://i.imgur.com/xpciIKj.jpg",
