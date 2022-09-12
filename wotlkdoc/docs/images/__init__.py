@@ -149,6 +149,45 @@ def image_by_faction(faction: str) -> Image:
     return image_path_to_rst_obj(img_path=img_path)
 
 
+dir_portal_icon = dir_image / "portal"
+
+_portal_icon_mapper = dict(
+    暴风城="01-stormwind.png",
+    铁炉堡="02-ironforge.png",
+    达纳苏斯="03-darnassus.png",
+    埃索达="04-exodar.png",
+    塞拉摩="05-theramore.png",
+    奥格瑞玛="06-orgrimmar.png",
+    雷霆崖="07-thunderbluff.png",
+    幽暗城="08-undercity.png",
+    银月城="09-silvermoon.png",
+    斯通纳德="10-stonard.png",
+    月光林地="11-moonglade.png",
+    沙塔斯城="12-shattrath.png",
+    达拉然="13-dalaran.png",
+    黯黑堡="14-ebonhold.png",
+    stormwind="01-stormwind.png",
+    ironforge="02-ironforge.png",
+    darnassus="03-darnassus.png",
+    exodar="04-exodar.png",
+    theramore="05-theramore.png",
+    orgrimmar="06-orgrimmar.png",
+    thunderbluff="07-thunderbluff.png",
+    undercity="08-undercity.png",
+    silvermoon="09-silvermoon.png",
+    stonard="10-stonard.png",
+    moonglade="11-moonglade.png",
+    shattrath="12-shattrath.png",
+    dalaran="13-dalaran.png",
+    ebonhold="14-ebonhold.png",
+)
+
+
+def icon_by_portal(portal: str) -> Image:
+    img_path = dir_portal_icon / _portal_icon_mapper[portal.lower()]
+    return image_path_to_rst_obj(img_path=img_path)
+
+
 dir_map = dir_image / "map"
 
 _pairs = [

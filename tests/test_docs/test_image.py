@@ -8,7 +8,9 @@ from wotlkdoc.docs.images import (
     dir_source,
     image_by_class,
     image_by_trade_skill,
+    image_by_faction,
     image_by_map,
+    icon_by_portal,
 )
 
 
@@ -27,7 +29,16 @@ def test_image_by_class():
 def test_image_by_trade_skill():
     assert image_by_trade_skill("锻造").uri == "/_static/image/trade-skill/blacksmithing.png"
     assert image_by_trade_skill("blacksmithing").uri == "/_static/image/trade-skill/blacksmithing.png"
-    
+
+
+def test_image_by_faction():
+    assert image_by_faction("联盟").uri == "/_static/image/faction-icon/alliance.png"
+    assert image_by_faction("血精灵").uri == "/_static/image/faction-icon/bloodelf.png"
+
+
+def test_icon_by_portal():
+    assert icon_by_portal("达拉然").uri == "/_static/image/portal/13-dalaran.png"
+
 
 def test_image_by_map():
     assert image_by_map("暴风城").uri == "/_static/image/map/03-主城/暴风城.jpg"

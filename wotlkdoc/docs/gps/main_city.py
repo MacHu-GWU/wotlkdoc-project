@@ -1,16 +1,39 @@
 # -*- coding: utf-8 -*-
 
-from .helper import (
-    remove_go_cmd_construct_teleport,
-    disaggregate_df_transform_to_list_table,
+import typing as T
+import polars as pl
+
+from ..importer import (
+    TsvGzReader,
+    dataframe_to_list_table,
 )
-from ...compressed_tsv import make_gzip, read_compressed_tsv
+from ..images import icon_by_portal, image_by_map
+from .go_cmd import with_teleport_command
 
-make_gzip(this_file=__file__, filename="main-city.tsv")
-df_main_city_gps = read_compressed_tsv(this_file=__file__, filename="main-city.tsv.gz")
-df_main_city_gps.columns = "城市,地点,描述,gm_cmd".split(",")
-df_main_city_gps = remove_go_cmd_construct_teleport(df_main_city_gps)
-lt_list_main_city_gps = disaggregate_df_transform_to_list_table(df_main_city_gps, "城市")
+if T.TYPE_CHECKING:
+    from rstobj import Image, ListTable
 
-if __name__ == "__main__":
-    print(lt_list_main_city_gps[0][1].render())
+
+def lt_list_main_city_gps_and_label_and_image() -> T.List[
+    T.Tuple['ListTable', str, 'Image']
+]:
+    reader = TsvGzReader(__file__)
+    df = reader.read_df("main-city.tsv.gz")
+
+    columns = "城市,地点,描述,go_cmd".split(",")
+    df.columns = columns
+    df1 = with_teleport_command(df, go_cmd_col="go_cmd")
+    df2 = df1.with_column(pl.col("城市").apply(f=icon_by_portal).alias("图标"))
+    df3 = df2.select("图标,城市,地点,描述,传送命令1,传送命令2".split(","))
+
+    lst = list()
+    for city in df3["城市"].unique(maintain_order=True):
+        sub_df = df3.filter(df3["城市"] == city)
+        lst.append(
+            (
+                dataframe_to_list_table(sub_df, title=f"{city}传送GM命令"),
+                city,
+                image_by_map(city),
+            )
+        )
+    return lst
