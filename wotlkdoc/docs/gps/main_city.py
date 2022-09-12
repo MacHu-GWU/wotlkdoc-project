@@ -29,11 +29,13 @@ def lt_list_main_city_gps_and_label_and_image() -> T.List[
     lst = list()
     for city in df3["城市"].unique(maintain_order=True):
         sub_df = df3.filter(df3["城市"] == city)
+        image = image_by_map(city)
+        image.height = 480
         lst.append(
             (
                 dataframe_to_list_table(sub_df, title=f"{city}传送GM命令"),
                 city,
-                image_by_map(city),
+                image,
             )
         )
     return lst

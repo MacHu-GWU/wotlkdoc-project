@@ -1,0 +1,19 @@
+.. _主城传送GM命令:
+
+主城 传送 GM命令
+------------------------------------------------------------------------------
+.. contents::
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+    :depth: 1
+    :local:
+
+
+.. jinja:: doc_data
+
+    {% for lt, city, image in doc_data.lt_list_main_city_gps_and_label_and_image() %}
+    {{ city }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {{ image.render() }}
+
+    {{ lt.render() }}
+    {% endfor %}
