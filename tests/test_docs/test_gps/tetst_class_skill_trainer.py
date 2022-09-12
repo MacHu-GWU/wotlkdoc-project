@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from wotlkdoc.docs.gps.class_skill_trainer import *
+from wotlkdoc.docs.gps.class_skill_trainer import lt_list_class_trainer_gsp
 
 
 def test():
-    pass
+    lt = lt_list_class_trainer_gsp()
+    lt.render()
+    # print(lt.render())
 
 
 if __name__ == "__main__":

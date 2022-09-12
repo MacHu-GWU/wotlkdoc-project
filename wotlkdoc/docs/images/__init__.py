@@ -112,6 +112,43 @@ def image_by_trade_skill(trade_skill: str) -> Image:
     return image_path_to_rst_obj(img_path=img_path)
 
 
+dir_faction_icon = dir_image / "faction-icon"
+
+_faction_icon_mapper = dict(
+    联盟="alliance.png",
+    人类="human.png",
+    矮人="dwarf.png",
+    侏儒="gnome.png",
+    暗夜精灵="nightelf.png",
+    德莱尼="draenei.png",
+    部落="horde.png",
+    兽人="orc.png",
+    巨魔="troll.png",
+    牛头人="tauren.png",
+    亡灵="undead.png",
+    血精灵="bloodelf.png",
+    中立="neutral.png",
+    alliance="alliance.png",
+    human="human.png",
+    dwarf="dwarf.png",
+    gnome="gnome.png",
+    nightelf="nightelf.png",
+    draenei="draenei.png",
+    horde="horde.png",
+    orc="orc.png",
+    troll="troll.png",
+    tauren="tauren.png",
+    undead="undead.png",
+    bloodelf="bloodelf.png",
+    neutral="neutral.png",
+)
+
+
+def image_by_faction(faction: str) -> Image:
+    img_path = dir_faction_icon / _faction_icon_mapper[faction.lower()]
+    return image_path_to_rst_obj(img_path=img_path)
+
+
 dir_map = dir_image / "map"
 
 _pairs = [
