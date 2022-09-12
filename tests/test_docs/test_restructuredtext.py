@@ -3,9 +3,11 @@
 import os
 import pytest
 import polars as pl
+
+from rstobj import CodeBlockPython
 from wotlkdoc.docs.restructuredtext import (
     convert_to_codeblock_python,
-    codify_dataframe,
+    with_columns,
     dataframe_to_list_table,
 )
 
@@ -19,7 +21,7 @@ def test_convert_to_codeblock_python():
     )
 
 
-def test_codify_dataframe():
+def test_with_columns():
     df = pl.DataFrame(
         [
             ("雷霆之怒, 逐风者的祝福之剑", 19019),
@@ -30,20 +32,48 @@ def test_codify_dataframe():
         columns=["name", "id"]
     )
     column = "add_item_cmd"
-    new_df = codify_dataframe(
+    new_df = with_columns(
         df,
         {
-            column: lambda row: ".add {}".format(row["id"])
+            column: lambda row: convert_to_codeblock_python(".add {}".format(row["id"]))
         }
     )
-    assert new_df["add_item_cmd"][0] == (
-        ".. code-block:: python\n"
-        "\n"
-        "    .add 19019"
-    )
+    assert isinstance(new_df.to_dicts()[0][column], CodeBlockPython)
 
-    lt = dataframe_to_list_table(new_df, "ItemCode")
-    _ = lt.render()
+
+def test_dataframe_to_list_table():
+    df = pl.DataFrame(
+        [
+            [123, ],
+            [456, ],
+        ],
+        columns=["id", ]
+    )
+    new_df = with_columns(
+        df,
+        {
+            "add_item": lambda row: convert_to_codeblock_python(".add {}".format(row["id"]))
+        }
+    )
+    lt = dataframe_to_list_table(new_df, title="Add Item")
+    print([lt.render(), ])
+    assert lt.render() == (
+        ".. list-table:: Add Item\n"
+        "    :class: sortable\n"
+        "    :header-rows: 1\n"
+        "    :stub-columns: 0\n"
+        "\n"
+        "    * - id\n"
+        "      - add_item\n"
+        "    * - 123\n"
+        "      - .. code-block:: python\n"
+        "        \n"
+        "            .add 123\n"
+        "    * - 456\n"
+        "      - .. code-block:: python\n"
+        "        \n"
+        "            .add 456\n"
+    )
 
 
 if __name__ == "__main__":

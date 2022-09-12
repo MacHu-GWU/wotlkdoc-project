@@ -1,5 +1,39 @@
 # -*- coding: utf-8 -*-
 
+from pathlib_mate import Path
+from rstobj import Image
+from ..paths import dir_source
+
+
+def image_path_to_href(img_path: str):
+    """
+    Assuming ``dir_static = "/home/username/wotlkdoc-project/docs/source/_static``,
+    given an file path of an image that in the ``_static`` folder   ``/home/username/wotlkdoc-project/docs/source/_static/wotlkdoc-logo.png``,
+    return the url href link ``/_static/wotlkdoc-logo.png``, which can be used
+    in restructuredtext ``image`` directive.
+    """
+    rel_path = Path(img_path).relative_to(dir_source)
+    return "/" + str(rel_path)
+
+
+def image_path_to_rst_obj(
+    img_path: str,
+    height: int = None,
+    width: int = None,
+    scale: int = None,
+    alt_text: str = None,
+    align: str = None,
+) -> Image:
+    return Image(
+        uri=image_path_to_href(img_path),
+        height=height,
+        width=width,
+        scale=scale,
+        alt_text=alt_text,
+        align=align,
+    )
+
+
 img_map_cities = dict(
     暴风城="https://i.imgur.com/R8weKXG.jpg",
     铁炉堡="https://i.imgur.com/AuwY8LS.jpg",

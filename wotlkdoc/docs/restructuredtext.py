@@ -17,18 +17,29 @@ def convert_to_codeblock_python(value: T.Union[str, int]) -> CodeBlockPython:
     return CodeBlockPython(code=Code(text="%s" % value))
 
 
-def codify_dataframe(
+def with_columns(
     df: pl.DataFrame,
-    col_and_func: T.Dict[str, T.Callable] = None,
+    named_funcs: T.Dict[str, T.Callable],
 ) -> pl.DataFrame:
-    records = list()
-    for record in df.to_dicts():
-        for col, func in col_and_func.items():
-            value = convert_to_codeblock_python(func(record)).render()
-            record[col] = value
-        records.append(record)
-    new_df = pl.DataFrame(records)
-    return new_df
+    """
+    对 DataFrame 进行处理, 创建新的列, 或者更新已有的列. 更新的逻辑见下
+
+    :param named_funcs: 一个 {key: value} 字典, key 是 column 名字, value 则是一个
+        callable function, 这个 function 只接受一个输入, 输入是 DataFrame 的一行,
+        而输出可以是任何对象.
+    """
+    exprs = [
+        pl.col(col)
+        for col in df.columns
+    ]
+    for col, func in named_funcs.items():
+        expr = (
+            pl.struct(df.columns)
+                .apply(func)
+                .alias(col)
+        )
+        exprs.append(expr)
+    return df.select(exprs)
 
 
 def dataframe_to_list_table(
@@ -36,7 +47,7 @@ def dataframe_to_list_table(
     title="",
 ):
     """
-    将 DataFrame 转化成 Rst 中的 List Table 对象.
+    将 DataFrame 转化成 Rst 中的 List Table 对象. 这个 DataFrame 里只允许有
 
     :param df: DataFrame
     :param title: optional list table title
