@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+import pytest
+from wotlkdoc.docs.gps.zone import (
+    lt_list_east_map_gps,
+)
+
+
+def test():
+    lst = lt_list_east_map_gps()
+    for lt, map, image in lst:
+        lt.render()
+        print(lt.render())
+
+
+if __name__ == "__main__":
+    import os
+
+    basename = os.path.basename(__file__)
+    pytest.main([basename, "-s", "--tb=native"])
