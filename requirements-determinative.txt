@@ -24,7 +24,7 @@ keyring==23.8.2
 MarkupSafe==2.1.1
 mpire==2.5.0
 numpy==1.23.2
-oauthlib==3.2.0
+oauthlib==3.2.1
 packaging==21.3
 pandas-mate==0.0.3
 pathlib-mate==1.0.3
