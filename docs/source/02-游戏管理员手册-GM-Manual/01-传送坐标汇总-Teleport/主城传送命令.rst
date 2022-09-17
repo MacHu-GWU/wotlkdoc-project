@@ -2,7 +2,7 @@
 
 主城 传送 GM命令
 ------------------------------------------------------------------------------
-.. contents:: 子命令
+.. contents:: 子目录
     :class: this-will-duplicate-information-and-it-is-still-useful-here
     :depth: 1
     :local:

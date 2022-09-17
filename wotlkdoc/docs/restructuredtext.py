@@ -47,7 +47,7 @@ def dataframe_to_list_table(
     df: pl.DataFrame,
     title="",
     **kwargs
-):
+) -> ListTable:
     """
     将 DataFrame 转化成 Rst 中的 List Table 对象. 这个 DataFrame 里只允许有
 
