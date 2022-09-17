@@ -46,21 +46,25 @@ def with_columns(
 def dataframe_to_list_table(
     df: pl.DataFrame,
     title="",
+    **kwargs
 ):
     """
     将 DataFrame 转化成 Rst 中的 List Table 对象. 这个 DataFrame 里只允许有
 
     :param df: DataFrame
     :param title: optional list table title
+    :param kwargs: additional keyword argument pass to ``ListTable(**kwargs)``
     """
     lt_data = [list(df.columns), ]
     for row in df.to_dicts():
         lt_data.append(list(row.values()))
-    lt = ListTable(
+    kw = dict(
         data=lt_data,
         title=title,
         index=False,
         header=True,
         class_="sortable",
     )
+    kw.update(kwargs)
+    lt = ListTable(**kw)
     return lt

@@ -22,7 +22,7 @@ class GoCmd(AttrsClass):
 
     @property
     def go_cmd(self) -> str:
-        return ".go {:.2f} {:.2f} {:.2f} {}".format(
+        return ".go {:.1f} {:.1f} {:.1f} {}".format(
             self.x,
             self.y,
             self.z,
@@ -31,7 +31,7 @@ class GoCmd(AttrsClass):
 
     @property
     def go_xyz_cmd(self) -> str:
-        return ".go xyz {:.2f} {:.2f} {:.2f} {}".format(
+        return ".go xyz {:.1f} {:.1f} {:.1f} {}".format(
             self.x,
             self.y,
             self.z,
@@ -87,7 +87,6 @@ def with_teleport_command(
     return with_columns(
         df,
         named_funcs={
-            "传送命令1": lambda row: convert_to_codeblock_python(GoCmd.from_string(row[go_cmd_col]).go_cmd),
-            "传送命令2": lambda row: convert_to_codeblock_python(GoCmd.from_string(row[go_cmd_col]).go_xyz_cmd),
+            "传送命令": lambda row: convert_to_codeblock_python(GoCmd.from_string(row[go_cmd_col]).go_xyz_cmd),
         }
     ).drop(go_cmd_col)
