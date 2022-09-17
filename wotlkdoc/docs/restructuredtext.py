@@ -68,3 +68,19 @@ def dataframe_to_list_table(
     kw.update(kwargs)
     lt = ListTable(**kw)
     return lt
+
+
+def to_add_item_cmd(item_id: T.Union[str, int]) -> CodeBlockPython:
+    return convert_to_codeblock_python(f".add {item_id}")
+
+
+def to_learn_spell_cmd(spell_id: T.Union[str, int]) -> CodeBlockPython:
+    return convert_to_codeblock_python(f".learn {spell_id}")
+
+
+def to_aura_cmd(spell_id: T.Union[str, int]) -> CodeBlockPython:
+    return convert_to_codeblock_python(f".aura {spell_id}")
+
+
+def to_unaura_cmd(spell_id: T.Union[str, int]) -> CodeBlockPython:
+    return convert_to_codeblock_python(f".unaura {spell_id}")

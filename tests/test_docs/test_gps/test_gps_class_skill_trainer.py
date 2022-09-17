@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from wotlkdoc.docs.gps.class_skill_trainer import lt_list_class_trainer_gsp
+from wotlkdoc.docs.gps.class_skill_trainer import lt_list_class_trainer_gps
 
 
 def test():
-    lt = lt_list_class_trainer_gsp()
+    lt = lt_list_class_trainer_gps()
     lt.render()
     # print(lt.render())
 

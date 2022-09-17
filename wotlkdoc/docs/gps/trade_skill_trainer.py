@@ -14,7 +14,7 @@ if T.TYPE_CHECKING:
     from rstobj import Image, ListTable
 
 
-def lt_list_trade_skill_trainer_gsp() -> T.List[T.Tuple["ListTable", str, "Image"]]:
+def lt_list_trade_skill_trainer_gps() -> T.List[T.Tuple["ListTable", str, "Image"]]:
     reader = TsvGzReader(__file__)
     df = reader.read_df("trade-skill-trainer.tsv.gz")
 

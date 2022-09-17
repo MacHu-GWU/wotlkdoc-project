@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from wotlkdoc.docs.gps.common import lt_list_common_gsp
+from wotlkdoc.docs.gps.common import lt_list_common_gps
 
 
 def test():
-    lt = lt_list_common_gsp()
+    lt = lt_list_common_gps()
     lt.render()
     # print(lt.render())
 

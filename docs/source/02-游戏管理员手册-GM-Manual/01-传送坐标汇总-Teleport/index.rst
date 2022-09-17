@@ -74,7 +74,7 @@
 ------------------------------------------------------------------------------
 .. jinja:: doc_data
 
-    {{ doc_data.lt_list_common_gsp().render() }}
+    {{ doc_data.lt_list_common_gps().render() }}
 
 
 .. _主城传送GM命令:
@@ -104,7 +104,7 @@
 ------------------------------------------------------------------------------
 .. jinja:: doc_data
 
-    {{ doc_data.lt_list_class_trainer_gsp().render() }}
+    {{ doc_data.lt_list_class_trainer_gps().render() }}
 
 
 .. _商业技能训练师传送GM命令:
@@ -118,7 +118,7 @@
 
 .. jinja:: doc_data
 
-    {% for lt, trade_skill, image in doc_data.lt_list_trade_skill_trainer_gsp() %}
+    {% for lt, trade_skill, image in doc_data.lt_list_trade_skill_trainer_gps() %}
     .. _{{ trade_skill }}训练师传送GM命令:
 
     {{ trade_skill }} 训练师传送GM命令

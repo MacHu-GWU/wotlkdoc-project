@@ -38,6 +38,33 @@ def image_path_to_rst_obj(
 
 dir_image = dir_static / "image"
 
+dir_expansion = dir_image / "expansion-logo"
+
+_expansion_image_mapper = dict(
+    vanilla="WoW01-Vanilla-Logo.png",
+    tbc="WoW02-The-Burning-Crusade-Logo.png",
+    wlk="WoW03-Wrath-of-the-Lich-King-Logo.png",
+    ctm="WoW04-Cataclysm-Logo.png",
+    mop="WoW05-Mists-of-Pandaria-Logo.png",
+    wod="WoW06-Warlords-of-Draenor-Logo.png",
+    legion="WoW07-Legion-Logo.png",
+    bfa="WoW08-Battle-for-Azeroth-Logo.png",
+    经典旧世="WoW01-Vanilla-Logo.png",
+    燃烧的远征="WoW02-The-Burning-Crusade-Logo.png",
+    巫妖王之怒="WoW03-Wrath-of-the-Lich-King-Logo.png",
+    大灾变="WoW04-Cataclysm-Logo.png",
+    熊猫人之谜="WoW05-Mists-of-Pandaria-Logo.png",
+    德拉诺之王="WoW06-Warlords-of-Draenor-Logo.png",
+    军团再临="WoW07-Legion-Logo.png",
+    争霸艾泽拉斯="WoW08-Battle-for-Azeroth-Logo.png",
+)
+
+
+def image_by_exp(expansion: str) -> Image:
+    img_path = dir_expansion / _expansion_image_mapper[expansion.lower()]
+    return image_path_to_rst_obj(img_path=img_path, height=64)
+
+
 dir_class_icon = dir_image / "class-icon"
 
 _class_icon_mapper = dict(

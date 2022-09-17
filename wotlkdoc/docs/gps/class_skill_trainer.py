@@ -10,7 +10,7 @@ from ..images import image_by_class, image_by_faction
 from .go_cmd import with_teleport_command
 
 
-def lt_list_class_trainer_gsp():
+def lt_list_class_trainer_gps():
     reader = TsvGzReader(__file__)
     df = reader.read_df("class-skill-trainer.tsv.gz")
     df = df.select([

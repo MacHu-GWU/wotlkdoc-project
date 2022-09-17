@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+Doc related file / folder paths
+"""
+
 from pathlib_mate import Path
 
 dir_project_root = Path.dir_here(__file__).parent.parent

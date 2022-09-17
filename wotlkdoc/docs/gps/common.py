@@ -9,7 +9,7 @@ from ..importer import (
 from .go_cmd import with_teleport_command
 
 
-def lt_list_common_gsp():
+def lt_list_common_gps():
     reader = TsvGzReader(__file__)
     df = reader.read_df("common.tsv.gz")
     df = df.select([

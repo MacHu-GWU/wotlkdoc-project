@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from wotlkdoc.docs.gps.trade_skill_trainer import lt_list_trade_skill_trainer_gps
+from wotlkdoc.docs.consumable import lt_list_consumable
 
 
 def test():
-    lst = lt_list_trade_skill_trainer_gps()
-    for lt, trade_skill, image in lst:
+    for lt, exp, image in lt_list_consumable():
         lt.render()
         # print(lt.render())
-        break
 
 
 if __name__ == "__main__":

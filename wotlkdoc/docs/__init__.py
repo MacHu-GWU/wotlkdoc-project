@@ -1,17 +1,20 @@
 # -*- coding: utf-8 -*-
 
 from . import gps
+from .consumable import lt_list_consumable
 
 doc_data = dict(
-    lt_list_common_gsp=gps.lt_list_common_gsp,
+    lt_list_common_gps=gps.lt_list_common_gps,
     lt_list_main_city_gps_and_label_and_image=gps.lt_list_main_city_gps_and_label_and_image,
-    lt_list_class_trainer_gsp=gps.lt_list_class_trainer_gsp,
-    lt_list_trade_skill_trainer_gsp=gps.lt_list_trade_skill_trainer_gsp,
+    lt_list_class_trainer_gps=gps.lt_list_class_trainer_gps,
+    lt_list_trade_skill_trainer_gps=gps.lt_list_trade_skill_trainer_gps,
     lt_list_east_map_gps=gps.lt_list_east_map_gps,
     lt_list_kali_map_gps=gps.lt_list_kali_map_gps,
     lt_list_tbc_map_gps=gps.lt_list_tbc_map_gps,
     lt_list_wlk_map_gps=gps.lt_list_wlk_map_gps,
     lt_list_instance_gps=gps.lt_list_instance_gps,
+
+    lt_list_consumable=lt_list_consumable,
 )
 
 # import logging
@@ -46,10 +49,10 @@ doc_data = dict(
 #         lt_list_main_city_gps=gps.lt_list_main_city_gps,
 #
 #         # gps class trainer
-#         lt_list_class_trainer_gsp=gps.lt_list_class_trainer_gsp,
+#         lt_list_class_trainer_gps=gps.lt_list_class_trainer_gps,
 #
 #         # gps trade skill trainer
-#         lt_list_trade_skill_trainer_gsp=gps.lt_list_trade_skill_trainer_gsp,
+#         lt_list_trade_skill_trainer_gps=gps.lt_list_trade_skill_trainer_gps,
 #
 #         # gps instance, dungeon, raid
 #         list_of_lt_list_instance_gps=gps.list_of_lt_list_instance_gps,
