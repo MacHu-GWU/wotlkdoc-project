@@ -1,3 +1,7 @@
+.. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/wotlkdoc-project
+
+
 魔兽世界 巫妖王之怒 文档大全
 ==============================================================================
 
