@@ -70,7 +70,7 @@ _class_icon_mapper = dict(
 
 def image_by_class(class_: str) -> Image:
     img_path = dir_class_icon / _class_icon_mapper[class_.lower()]
-    return image_path_to_rst_obj(img_path=img_path)
+    return image_path_to_rst_obj(img_path=img_path, height=64)
 
 
 dir_trade_skill_icon = dir_image / "trade-skill"
@@ -111,7 +111,7 @@ _trade_skill_icon_mapper = dict(
 
 def image_by_trade_skill(trade_skill: str) -> Image:
     img_path = dir_trade_skill_icon / _trade_skill_icon_mapper[trade_skill.lower()]
-    return image_path_to_rst_obj(img_path=img_path)
+    return image_path_to_rst_obj(img_path=img_path, height=64)
 
 
 dir_faction_icon = dir_image / "faction-icon"
@@ -148,7 +148,7 @@ _faction_icon_mapper = dict(
 
 def image_by_faction(faction: str) -> Image:
     img_path = dir_faction_icon / _faction_icon_mapper[faction.lower()]
-    return image_path_to_rst_obj(img_path=img_path)
+    return image_path_to_rst_obj(img_path=img_path, height=64)
 
 
 dir_portal_icon = dir_image / "portal"
@@ -187,7 +187,7 @@ _portal_icon_mapper = dict(
 
 def icon_by_portal(portal: str) -> Image:
     img_path = dir_portal_icon / _portal_icon_mapper[portal.lower()]
-    return image_path_to_rst_obj(img_path=img_path)
+    return image_path_to_rst_obj(img_path=img_path, height=64)
 
 
 dir_map = dir_image / "map"

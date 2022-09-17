@@ -21,6 +21,7 @@ def lt_list_class_trainer_gsp():
         pl.col("go_cmd"),
     ])
     df1 = with_teleport_command(df, go_cmd_col="go_cmd")
+
     df2 = df1.with_column(pl.col("阵营").apply(f=image_by_faction))
     df3 = df2.with_column(pl.col("职业").apply(f=image_by_class))
 
