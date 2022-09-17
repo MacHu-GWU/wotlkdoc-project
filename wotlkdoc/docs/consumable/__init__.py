@@ -13,7 +13,6 @@ from ..images import image_by_exp
 def lt_list_consumable():
     reader = TsvGzReader(__file__)
     df = reader.read_df("consumable.tsv.gz")
-    # 资料片,类型,效果类型,名称,效果,添加物品命令
     df = df.select([
         pl.col("expansion").alias("资料片"),
         pl.col("type").alias("类型"),

@@ -2,6 +2,7 @@
 
 from . import gps
 from .consumable import lt_list_consumable
+from .mount import lt_popular_mount, lt_all_mount
 
 doc_data = dict(
     lt_list_common_gps=gps.lt_list_common_gps,
@@ -15,6 +16,9 @@ doc_data = dict(
     lt_list_instance_gps=gps.lt_list_instance_gps,
 
     lt_list_consumable=lt_list_consumable,
+
+    lt_popular_mount=lt_popular_mount,
+    lt_all_mount=lt_all_mount,
 )
 
 # import logging

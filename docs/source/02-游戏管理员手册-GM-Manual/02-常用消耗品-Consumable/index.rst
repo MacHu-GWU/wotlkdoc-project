@@ -45,6 +45,7 @@
 .. image:: /_static/image/role-icon/tank.png
 
 
+
 .. list-table::
     :widths: 10 60
     :header-rows: 1
@@ -71,7 +72,6 @@
             .add 46379 -20
             .add 46379 20 石血合剂 1300 HP
             /targetlasttarget
-
 
 .. _WLK力量DPS消耗品GM命令:
 
