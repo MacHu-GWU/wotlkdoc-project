@@ -214,6 +214,61 @@ map_image_mapper = {
     for fname, p in _pairs
 }
 
+# add some alias
+# Vanilla
+map_image_mapper["血色修道院"] = map_image_mapper["血色修道院-教堂"]
+map_image_mapper["厄运之槌"] = map_image_mapper["厄运之槌-入口"]
+map_image_mapper["通灵学院"] = map_image_mapper["通灵学院1"]
+map_image_mapper["斯坦索姆"] = map_image_mapper["斯坦索姆1"]
+map_image_mapper["黑石塔"] = map_image_mapper["黑石山-入口"]
+map_image_mapper["黑石塔上层"] = map_image_mapper["黑石山-黑石塔上层"]
+map_image_mapper["黑石塔下层"] = map_image_mapper["黑石山-黑石塔下层1"]
+map_image_mapper["熔火之心"] = map_image_mapper["黑石山-熔火之心"]
+map_image_mapper["黑翼之巢"] = map_image_mapper["黑石山-黑翼之巢"]
+map_image_mapper["安其拉废墟"] = map_image_mapper["安其拉-安其拉废墟"]
+map_image_mapper["安其拉神殿"] = map_image_mapper["安其拉-安其拉神殿"]
+
+# TBC
+map_image_mapper["地狱火城墙"] = map_image_mapper["地狱火堡垒-地狱火城墙"]
+map_image_mapper["鲜血熔炉"] = map_image_mapper["地狱火堡垒-鲜血熔炉"]
+map_image_mapper["破碎大厅"] = map_image_mapper["地狱火堡垒-破碎大厅"]
+
+map_image_mapper["奴隶围栏"] = map_image_mapper["盘牙水库-奴隶围栏"]
+map_image_mapper["幽暗沼泽"] = map_image_mapper["盘牙水库-幽暗沼泽"]
+map_image_mapper["蒸汽地窟"] = map_image_mapper["盘牙水库-蒸汽地窟"]
+
+map_image_mapper["法力陵墓"] = map_image_mapper["奥金顿-法力陵墓"]
+map_image_mapper["奥金尼地穴"] = map_image_mapper["奥金顿-奥金尼地穴"]
+map_image_mapper["赛泰克大厅"] = map_image_mapper["奥金顿-赛泰克大厅"]
+map_image_mapper["暗影迷宫"] = map_image_mapper["奥金顿-暗影迷宫"]
+
+map_image_mapper["旧希尔斯布莱德丘陵"] = map_image_mapper["时光之穴-旧希尔斯布莱德丘陵1"]
+map_image_mapper["黑色沼泽"] = map_image_mapper["时光之穴-黑色沼泽"]
+
+map_image_mapper["能源舰"] = map_image_mapper["风暴要塞-能源舰"]
+map_image_mapper["生态船"] = map_image_mapper["风暴要塞-生态船"]
+map_image_mapper["禁魔监狱"] = map_image_mapper["风暴要塞-禁魔监狱"]
+
+map_image_mapper["玛瑟里顿的巢穴"] = map_image_mapper["地狱火堡垒-玛瑟里顿的巢穴"]
+map_image_mapper["卡拉赞"] = map_image_mapper["卡拉赞-入口"]
+map_image_mapper["祖阿曼"] = map_image_mapper["祖阿曼1"]
+map_image_mapper["毒蛇神殿"] = map_image_mapper["盘牙水库-毒蛇神殿"]
+map_image_mapper["风暴要塞"] = map_image_mapper["风暴要塞-风暴要塞"]
+map_image_mapper["海加尔峰"] = map_image_mapper["时光之穴-海加尔峰"]
+map_image_mapper["黑暗神殿"] = map_image_mapper["黑暗神殿-起始"]
+
+# WLK
+map_image_mapper["岩石大厅"] = map_image_mapper["奥杜尔-岩石大厅"]
+map_image_mapper["闪电大厅"] = map_image_mapper["奥杜尔-闪电大厅"]
+map_image_mapper["纳克萨玛斯"] = map_image_mapper["纳克萨玛斯1"]
+map_image_mapper["奥杜尔"] = map_image_mapper["奥杜尔-城墙"]
+map_image_mapper["冠军的试炼"] = map_image_mapper["十字军大竞技场-冠军的试炼"]
+map_image_mapper["十字军的试炼"] = map_image_mapper["十字军大竞技场-十字军的试炼"]
+map_image_mapper["映像大厅"] = map_image_mapper["冰封大厅-映像大厅"]
+map_image_mapper["灵魂洪炉"] = map_image_mapper["冰封大厅-灵魂洪炉"]
+map_image_mapper["萨隆矿坑"] = map_image_mapper["冰封大厅-萨隆矿坑"]
+map_image_mapper["冰冠堡垒"] = map_image_mapper["冰冠堡垒-冰封王座"]
+
 
 def image_by_map(map_name: str) -> Image:
     img_path = map_image_mapper[map_name]

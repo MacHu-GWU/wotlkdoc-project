@@ -11,6 +11,7 @@ doc_data = dict(
     lt_list_kali_map_gps=gps.lt_list_kali_map_gps,
     lt_list_tbc_map_gps=gps.lt_list_tbc_map_gps,
     lt_list_wlk_map_gps=gps.lt_list_wlk_map_gps,
+    lt_list_instance_gps=gps.lt_list_instance_gps,
 )
 
 # import logging
