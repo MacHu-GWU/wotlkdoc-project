@@ -1,17 +1,18 @@
-.. _主城传送GM命令:
+.. _商业技能训练师传送GM命令:
 
-主城 传送 GM命令
+商业技能训练师 传送GM命令
 ------------------------------------------------------------------------------
-.. contents:: 子命令
+.. contents:: 子目录
     :class: this-will-duplicate-information-and-it-is-still-useful-here
     :depth: 1
     :local:
 
-
 .. jinja:: doc_data
 
-    {% for lt, city, image in doc_data.lt_list_main_city_gps_and_label_and_image() %}
-    {{ city }}
+    {% for lt, trade_skill, image in doc_data.lt_list_trade_skill_trainer_gsp() %}
+    .. _{{ trade_skill }}训练师传送GM命令:
+
+    {{ trade_skill }} 训练师传送GM命令
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     {{ image.render() }}
 

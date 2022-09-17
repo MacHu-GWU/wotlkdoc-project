@@ -1,0 +1,78 @@
+.. _东部王国地图传送GM命令:
+
+东部王国 传送GM命令
+------------------------------------------------------------------------------
+.. contents:: 子目录
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+    :depth: 1
+    :local:
+
+.. jinja:: doc_data
+
+    {% for lt, map, image in doc_data.lt_list_east_map_gps() %}
+    {{ map }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {{ image.render() }}
+
+    {{ lt.render() }}
+    {% endfor %}
+
+
+.. _卡利姆多地图传送GM命令:
+
+卡利姆多 地图 传送GM命令
+------------------------------------------------------------------------------
+.. contents:: 子目录
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+    :depth: 1
+    :local:
+
+.. jinja:: doc_data
+
+    {% for lt, map, image in doc_data.lt_list_kali_map_gps() %}
+    {{ map }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {{ image.render() }}
+
+    {{ lt.render() }}
+    {% endfor %}
+
+
+.. _燃烧的远征地图传送GM命令:
+
+燃烧的远征 地图 传送GM命令
+------------------------------------------------------------------------------
+.. contents:: 子目录
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+    :depth: 1
+    :local:
+
+.. jinja:: doc_data
+
+    {% for lt, map, image in doc_data.lt_list_tbc_map_gps() %}
+    {{ map }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {{ image.render() }}
+
+    {{ lt.render() }}
+    {% endfor %}
+
+
+.. _巫妖王之怒地图传送GM命令:
+
+巫妖王之怒 地图 传送GM命令
+------------------------------------------------------------------------------
+.. contents:: 子目录
+    :class: this-will-duplicate-information-and-it-is-still-useful-here
+    :depth: 1
+    :local:
+
+.. jinja:: doc_data
+
+    {% for lt, map, image in doc_data.lt_list_wlk_map_gps() %}
+    {{ map }}
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    {{ image.render() }}
+
+    {{ lt.render() }}
+    {% endfor %}

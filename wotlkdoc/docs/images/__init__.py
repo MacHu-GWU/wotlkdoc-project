@@ -90,6 +90,7 @@ _trade_skill_icon_mapper = dict(
     采矿="mining.png",
     剥皮="skinning.png",
     裁缝="tailoring.png",
+    全部="all.png",
     alchemy="alchemy.png",
     blacksmithing="blacksmithing.png",
     cooking="cooking.png",
@@ -104,6 +105,7 @@ _trade_skill_icon_mapper = dict(
     mining="mining.png",
     skinning="skinning.png",
     tailoring="tailoring.png",
+    all="all.png",
 )
 
 

@@ -5,9 +5,11 @@ from wotlkdoc.docs.gps.trade_skill_trainer import lt_list_trade_skill_trainer_gs
 
 
 def test():
-    lt = lt_list_trade_skill_trainer_gsp()
-    lt.render()
-    # print(lt.render())
+    lst = lt_list_trade_skill_trainer_gsp()
+    for lt, trade_skill, image in lst:
+        lt.render()
+        # print(lt.render())
+        break
 
 
 if __name__ == "__main__":
