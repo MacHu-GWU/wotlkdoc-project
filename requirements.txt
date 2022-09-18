@@ -1,11 +1,3 @@
 polars==0.14.5
 pypinyin==0.47.1
 rstobj==1.2.1
-boto3==1.24.66
-botocore==1.27.66
-boto_session_manager==0.0.4
-smart_open==5.2.1
-s3pathlib==1.0.11
-jmespath==0.10.0
-chalice==1.26.5
-cottonformation==0.0.8
