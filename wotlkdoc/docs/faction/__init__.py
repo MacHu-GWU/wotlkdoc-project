@@ -1,30 +1,41 @@
 # -*- coding: utf-8 -*-
 
-import pandas as pd
-from pathlib_mate import Path
-from wotlkdoc.compressed_tsv import make_gzip, read_compressed_tsv
-from wotlkdoc.df_to_list_table import df_to_list_table
+import typing as T
+import polars as pl
 
-tsv_filename = "faction.tsv"
-make_gzip(this_file=__file__, filename=tsv_filename)
-df = read_compressed_tsv(this_file=__file__, filename=tsv_filename + ".gz")
-df.columns = (
-    "资料片,类型,名称,介绍,奖励,faction_id,到崇拜的GM命令"
-).split(",")
-df = df.drop(columns=["介绍",])
+from ..importer import (
+    TsvGzReader,
+    dataframe_to_list_table,
+    to_modify_rep_cmd,
+)
+from ..images import image_by_exp
 
-def construct_list_table(expansion):
-    return df_to_list_table(
-        df=df[df["资料片"]==expansion].copy().drop(columns=["资料片",]),
-        title="{}声望".format(expansion),
-        code_column_and_transform_func={
-            "到崇拜的GM命令": None
-        },
-    )
+if T.TYPE_CHECKING:
+    from rstobj import Image, ListTable
 
-lt_faction_vanilla = construct_list_table("经典旧世")
-lt_faction_tbc = construct_list_table("燃烧的远征")
-lt_faction_wlk = construct_list_table("巫妖王之怒")
 
-if __name__ == "__main__":
-    print(lt_faction_vanilla.render())
+def lt_list_faction() -> T.List[
+    T.Tuple['ListTable', str, 'Image']
+]:
+    reader = TsvGzReader(__file__)
+    df = reader.read_df("faction.tsv.gz")
+    df = df.select([
+        pl.col("expansion").alias("资料片"),
+        pl.col("type").alias("类型"),
+        pl.col("name").alias("阵营"),
+        pl.col("reward").alias("奖励"),
+        pl.col("faction_id").alias("编号"),
+        pl.col("faction_id").apply(f=to_modify_rep_cmd).alias("崇拜命令"),
+    ])
+    lst = list()
+    for exp in df["资料片"].unique(maintain_order=True):
+        sub_df = df.filter(df["资料片"] == exp).drop("资料片")
+        image = image_by_exp(exp)
+        lst.append(
+            (
+                dataframe_to_list_table(sub_df, title=f"{exp}声望崇拜GM命令"),
+                exp,
+                image,
+            )
+        )
+    return lst

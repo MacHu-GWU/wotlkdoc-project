@@ -84,3 +84,7 @@ def to_aura_cmd(spell_id: T.Union[str, int]) -> CodeBlockPython:
 
 def to_unaura_cmd(spell_id: T.Union[str, int]) -> CodeBlockPython:
     return convert_to_codeblock_python(f".unaura {spell_id}")
+
+
+def to_modify_rep_cmd(faction_id: T.Union[str, int]) -> CodeBlockPython:
+    return convert_to_codeblock_python(f".modify rep {faction_id} 999999")

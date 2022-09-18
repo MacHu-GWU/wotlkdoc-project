@@ -9,4 +9,5 @@ from .restructuredtext import (
     to_learn_spell_cmd,
     to_aura_cmd,
     to_unaura_cmd,
+    to_modify_rep_cmd,
 )

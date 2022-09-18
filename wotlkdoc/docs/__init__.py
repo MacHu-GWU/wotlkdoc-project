@@ -3,6 +3,7 @@
 from . import gps
 from .consumable import lt_list_consumable
 from .item_enhancement import lt_list_item_enhancement
+from .faction import lt_list_faction
 from .mount import lt_popular_mount, lt_all_mount
 
 doc_data = dict(
@@ -18,6 +19,7 @@ doc_data = dict(
 
     lt_list_consumable=lt_list_consumable,
     lt_list_item_enhancement=lt_list_item_enhancement,
+    lt_list_faction=lt_list_faction,
     lt_popular_mount=lt_popular_mount,
     lt_all_mount=lt_all_mount,
 )
