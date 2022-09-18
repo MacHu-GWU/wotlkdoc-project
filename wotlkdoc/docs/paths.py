@@ -9,6 +9,7 @@ import os
 for k, v in os.environ.items():
     print(k, v)
 print(os.getcwd())
+print(os.listdir(os.getcwd()))
 dir_project_root = Path.dir_here(__file__).parent.parent
 assert (dir_project_root / "setup.py").exists()
 
