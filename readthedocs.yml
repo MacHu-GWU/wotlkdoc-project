@@ -9,4 +9,4 @@ python:
     install:
         - requirements: requirements-determinative.txt
         - method: pip
-          path: .
+          path: -e .
