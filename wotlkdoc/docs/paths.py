@@ -5,7 +5,10 @@ Doc related file / folder paths
 """
 
 from pathlib_mate import Path
-
+import os
+for k, v in os.environ.items():
+    print(k, v)
+print(os.getcwd())
 dir_project_root = Path.dir_here(__file__).parent.parent
 assert (dir_project_root / "setup.py").exists()
 
