@@ -4,7 +4,7 @@
 Package Description.
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __short_description__ = "World of Warcraft - The Wrath of Lich King Document"
 __license__ = "MIT"
 __author__ = "Sanhe Hu"
