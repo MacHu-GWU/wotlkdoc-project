@@ -52,7 +52,7 @@ def _lt_list_zone_gps_and_label_and_image(
 
 
 def lt_list_east_map_gps():
-    return _lt_list_zone_gps_and_label_and_image("zone-1-a-vanilla-eastern-kingdom.tsv")
+    return _lt_list_zone_gps_and_label_and_image("zone-1-a-vanilla-eastern-kingdom.tsv.gz")
 
 
 def lt_list_kali_map_gps():

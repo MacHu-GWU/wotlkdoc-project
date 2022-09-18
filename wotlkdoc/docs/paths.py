@@ -13,9 +13,6 @@ if "READTHEDOCS" in os.environ:
 else:
     dir_project_root = Path.dir_here(__file__).parent.parent
 
-print("*******")
-print(dir_project_root)
-print(os.listdir(str(dir_project_root)))
 assert (dir_project_root / "setup.py").exists()
 
 dir_docs = dir_project_root / "docs"
