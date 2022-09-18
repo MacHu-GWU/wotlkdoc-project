@@ -220,10 +220,7 @@ with open(custom_style_file_path, "rb") as f:
 rst_prolog = "\n" + custom_style_file_content + "\n"
 
 # Add data for Jinja2
-try:
-    from wotlkdoc.docs import doc_data
-except:
-    doc_data = dict()
+from wotlkdoc.docs import doc_data
 
 jinja_contexts = {
     "doc_data": {
