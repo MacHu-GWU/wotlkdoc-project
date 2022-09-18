@@ -8,7 +8,7 @@ import os
 from pathlib_mate import Path
 
 
-if "READTHEDOCS" in os:
+if "READTHEDOCS" in os.environ:
     dir_project_root = Path.cwd().parent.parent
 else:
     dir_project_root = Path.dir_here(__file__).parent.parent
