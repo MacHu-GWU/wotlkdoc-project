@@ -1,4 +1,3 @@
-
 .. _天赋技能代码GM命令:
 
 天赋技能代码 (Talent Spell)
@@ -8,43 +7,43 @@
 
 注: 安装了SpellID插件之后, 即可在游戏中看到所有技能的ID, 即可不依赖此表格。
 
-.. image:: /_static/images/class-icon/Warrior.png
+.. image:: /_static/image/class-icon/01-Warrior.png
     :height: 64 px
     :width: 64 px
     :target: 战士天赋技能GM命令_
-.. image:: /_static/images/class-icon/Paladin.png
+.. image:: /_static/image/class-icon/02-Paladin.png
     :height: 64 px
     :width: 64 px
     :target: 圣骑士天赋技能GM命令_
-.. image:: /_static/images/class-icon/Death-Knight.png
+.. image:: /_static/image/class-icon/03-DeathKnight.png
     :height: 64 px
     :width: 64 px
     :target: 死亡骑士天赋技能GM命令_
-.. image:: /_static/images/class-icon/Hunter.png
+.. image:: /_static/image/class-icon/04-Hunter.png
     :height: 64 px
     :width: 64 px
     :target: 猎人天赋技能GM命令_
-.. image:: /_static/images/class-icon/Shaman.png
+.. image:: /_static/image/class-icon/05-Shaman.png
     :height: 64 px
     :width: 64 px
     :target: 萨满祭司天赋技能GM命令_
-.. image:: /_static/images/class-icon/Rogue.png
+.. image:: /_static/image/class-icon/06-Rogue.png
     :height: 64 px
     :width: 64 px
     :target: 盗贼天赋技能GM命令_
-.. image:: /_static/images/class-icon/Druid.png
+.. image:: /_static/image/class-icon/07-Druid.png
     :height: 64 px
     :width: 64 px
     :target: 德鲁伊天赋技能GM命令_
-.. image:: /_static/images/class-icon/Mage.png
+.. image:: /_static/image/class-icon/08-Mage.png
     :height: 64 px
     :width: 64 px
     :target: 法师天赋技能GM命令_
-.. image:: /_static/images/class-icon/Warlock.png
+.. image:: /_static/image/class-icon/09-Warlock.png
     :height: 64 px
     :width: 64 px
     :target: 术士天赋技能GM命令_
-.. image:: /_static/images/class-icon/Priest.png
+.. image:: /_static/image/class-icon/10-Priest.png
     :height: 64 px
     :width: 64 px
     :target: 牧师天赋技能GM命令_
@@ -167,7 +166,7 @@
 战士 (Warrior)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Warrior.png
+.. image:: /_static/image/class-icon/01-Warrior.png
     :height: 64 px
     :width: 64 px
 
@@ -278,7 +277,7 @@
 圣骑士 (Paladin)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Paladin.png
+.. image:: /_static/image/class-icon/02-Paladin.png
     :height: 64 px
     :width: 64 px
 
@@ -336,7 +335,7 @@
 死亡骑士 (Death Knight)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Death-Knight.png
+.. image:: /_static/image/class-icon/03-DeathKnight.png
     :height: 64 px
     :width: 64 px
 
@@ -358,7 +357,7 @@
 猎人 (Hunter)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Hunter.png
+.. image:: /_static/image/class-icon/04-Hunter.png
     :height: 64 px
     :width: 64 px
 
@@ -446,7 +445,7 @@
 萨满祭司 (Shaman)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Shaman.png
+.. image:: /_static/image/class-icon/05-Shaman.png
     :height: 64 px
     :width: 64 px
 
@@ -520,7 +519,7 @@
 盗贼 (Rogue)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Rogue.png
+.. image:: /_static/image/class-icon/06-Rogue.png
     :height: 64 px
     :width: 64 px
 
@@ -698,7 +697,7 @@
 德鲁伊 (Druid)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Druid.png
+.. image:: /_static/image/class-icon/07-Druid.png
     :height: 64 px
     :width: 64 px
 
@@ -781,7 +780,7 @@
 法师 (Mage)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Mage.png
+.. image:: /_static/image/class-icon/08-Mage.png
     :height: 64 px
     :width: 64 px
 
@@ -908,7 +907,7 @@
 术士 (Warlock)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Warlock.png
+.. image:: /_static/image/class-icon/09-Warlock.png
     :height: 64 px
     :width: 64 px
 
@@ -986,7 +985,7 @@
 牧师 (Priest)
 ------------------------------------------------------------------------------
 
-.. image:: /_static/images/class-icon/Priest.png
+.. image:: /_static/image/class-icon/10-Priest.png
     :height: 64 px
     :width: 64 px
 
