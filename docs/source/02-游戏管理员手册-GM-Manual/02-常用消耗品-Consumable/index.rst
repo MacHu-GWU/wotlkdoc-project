@@ -5,8 +5,6 @@
 .. image:: /_static/image/trade-goods/cooking/fish.png
 .. image:: /_static/image/trade-goods/alchemy/potion.png
 
-------
-
 .. list-table:: **快速索引**
     :header-rows: 0
 
