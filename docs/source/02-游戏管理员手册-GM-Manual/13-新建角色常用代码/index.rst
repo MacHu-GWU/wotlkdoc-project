@@ -24,7 +24,7 @@
             .add 23162 11
             .learn 34091
             .learn 54197
-            .learn 61426
+            .learn 61425
             .learn 75973
             .learn 72286
             /targetlasttarget
@@ -37,7 +37,7 @@
             .add 23162 11 36格包
             .learn 34091 大师级骑术
             .learn 54197 北裂境飞行
-            .learn 61426 旅行者猛犸象 联盟
+            .learn 61425 旅行者猛犸象 联盟
             .learn 75973 X-53 载人火箭
             .learn 72286 无敌
             /targetlasttarget
