@@ -13,7 +13,7 @@
     :header-rows: 1
 
     * - 阵营
-      - 声望崇拜命令
+      - GM命令
       - 说明
     * - .. image:: /_static/image/faction-icon/alliance.png
       - ::
