@@ -1,6 +1,6 @@
 .. _学习武器和防具技能的GM命令:
 
-学习武器和防具技能的GM命令 (Learn Weapon and Armor Skill GM Command)
+武器和防具技能 (Weapon and Armor Skill)
 ===============================================================================
 .. image:: Weapon.png
 .. image:: Armor.png

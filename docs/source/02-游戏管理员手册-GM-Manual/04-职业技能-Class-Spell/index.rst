@@ -1,6 +1,6 @@
-.. _职业技能代码GM命令:
+.. _职业技能GM命令:
 
-职业技能代码 (Class Spell)
+职业技能 (Class Spell)
 ===============================================================================
 .. image:: /_static/image/class-icon/01-Warrior.png
     :height: 128px
