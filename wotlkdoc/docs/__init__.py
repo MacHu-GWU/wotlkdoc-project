@@ -5,6 +5,7 @@ from .consumable import lt_list_consumable
 from .item_enhancement import lt_list_item_enhancement
 from .faction import lt_list_faction
 from .mount import lt_popular_mount, lt_all_mount
+from .expansion import lt_expansion
 
 doc_data = dict(
     lt_list_common_gps=gps.lt_list_common_gps,
@@ -22,6 +23,7 @@ doc_data = dict(
     lt_list_faction=lt_list_faction,
     lt_popular_mount=lt_popular_mount,
     lt_all_mount=lt_all_mount,
+    lt_expansion=lt_expansion,
 )
 
 # import logging
