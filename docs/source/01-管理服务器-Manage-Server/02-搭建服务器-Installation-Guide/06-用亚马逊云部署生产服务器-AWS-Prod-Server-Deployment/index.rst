@@ -138,8 +138,3 @@ deploy azerothcore (AC) wotlk wow private server to AWS.
     mysql --host="prod-server.cluster-c7pwcs7oc5l0.us-east-1.rds.amazonaws.com" --user="admin" --password="gw8CH&wjRW%Q"
 
     SELECT user, host FROM mysql.user;
-
-prod-server.c7pwcs7oc5l0.us-east-1.rds.amazonaws.com
-prod-server.cluster-c7pwcs7oc5l0.us-east-1.rds.amazonaws.com
-prod-server.cluster-ro-c7pwcs7oc5l0.us-east-1.rds.amazonaws.com
-prod-server.cluster-c7pwcs7oc5l0.us-east-1.rds.amazonaws.com
