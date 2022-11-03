@@ -18,6 +18,10 @@
     color: white;
 }
 
+.brown {
+    color: brown;
+}
+
 .maroon {
     color: maroon;
 }
@@ -50,6 +54,10 @@
     color: lime;
 }
 
+.darkseagreen {
+    color: darkseagreen;
+}
+
 .green {
     color: green;
 }
@@ -70,12 +78,20 @@
     color: aqua;
 }
 
+.dodgerblue {
+    color: dodgerblue;
+}
+
 .blue {
     color: blue;
 }
 
 .navy {
     color: navy;
+}
+
+.blueviolet {
+    color: blueviolet;
 }
 
 .purple {

@@ -3,6 +3,7 @@
 .. role:: grey
 .. role:: silver
 .. role:: white
+.. role:: brown
 .. role:: maroon
 .. role:: red
 .. role:: magenta
@@ -11,13 +12,16 @@
 .. role:: orange
 .. role:: yellow
 .. role:: lime
+.. role:: darkseagreen
 .. role:: green
 .. role:: olive
 .. role:: teal
 .. role:: cyan
 .. role:: aqua
+.. role:: dodgerblue
 .. role:: blue
 .. role:: navy
+.. role:: blueviolet
 .. role:: purple
 
 .. role:: under
