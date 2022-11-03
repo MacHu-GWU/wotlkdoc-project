@@ -152,24 +152,24 @@
     * - ::
 
             /target player
-            .add 49110 1
             .add 41285 1
+            .add 49110 1
+            .add 42144 3
             .add 40113 7
             .add 40155 5
             .add 40133 6
-            .add 42144 3
       - ::
 
             /target player
-            .add 49110 1 棱彩 10 全属性
             .add 41285 1 变换 21 暴, 3% 暴击伤害
+            .add 49110 1 棱彩 10 全属性
+            .add 42144 3 龙眼石 红 39 法伤
             .add 40113 7 红 法伤
             .add 40155 5 橙 法伤, 急速
             .add 40133 6 紫 法伤, 精神
-            .add 42144 3 龙眼石 红 39 法伤
 
 
-cha'c
+
 .. list-table::
     :widths: 10 60
     :header-rows: 1
